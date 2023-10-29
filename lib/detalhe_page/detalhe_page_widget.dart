@@ -509,7 +509,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Expanded(
+                                Flexible(
                                   child: Text(
                                     widget.descricao!,
                                     style: FlutterFlowTheme.of(context)
@@ -564,7 +564,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Expanded(
+                                Flexible(
                                   child: Container(
                                     width: 1200.0,
                                     height: 900.0,

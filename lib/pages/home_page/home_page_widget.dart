@@ -64,29 +64,72 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               automaticallyImplyLeading: false,
               title: Row(
                 mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(0.0),
-                    child: Image.asset(
-                      'assets/images/ff_logo_small_(1).png',
-                      width: 50.0,
-                      height: 50.0,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  Text(
-                    'COPY PAGE - FLUTTERFLOW',
-                    style: FlutterFlowTheme.of(context).titleLarge.override(
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w900,
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(0.0),
+                        child: Image.asset(
+                          'assets/images/ff_logo_small_(1).png',
+                          width: 50.0,
+                          height: 50.0,
+                          fit: BoxFit.cover,
                         ),
+                      ),
+                      Text(
+                        'COPY PAGE - FLUTTERFLOW',
+                        style: FlutterFlowTheme.of(context).titleLarge.override(
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w900,
+                            ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        'Home ',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Readex Pro',
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                        child: Text(
+                          'Contato',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Readex Pro',
+                                    fontSize: 20.0,
+                                  ),
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                        child: Text(
+                          'Templates',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Readex Pro',
+                                    fontSize: 20.0,
+                                  ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
               actions: [],
               centerTitle: false,
               toolbarHeight: 80.0,
-              elevation: 2.0,
+              elevation: 0.0,
             )
           ],
           body: Builder(

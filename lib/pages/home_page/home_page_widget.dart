@@ -92,14 +92,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Text(
+                      SelectionArea(
+                          child: Text(
                         'Home ',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
                               fontSize: 20.0,
                               fontWeight: FontWeight.bold,
                             ),
-                      ),
+                      )),
                       Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),

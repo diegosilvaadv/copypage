@@ -50,6 +50,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'HomePage',
           path: '/homePage',
           builder: (context, params) => HomePageWidget(),
+        ),
+        FFRoute(
+          name: 'detalhePage',
+          path: '/detalhePage',
+          builder: (context, params) => DetalhePageWidget(
+            titulo: params.getParam('titulo', ParamType.String),
+            descricao: params.getParam('descricao', ParamType.String),
+            img: params.getParam('img', ParamType.String),
+            categoria: params.getParam('categoria', ParamType.String),
+            copypage: params.getParam('copypage', ParamType.String),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

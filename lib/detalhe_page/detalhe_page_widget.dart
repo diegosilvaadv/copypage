@@ -183,7 +183,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                       context: context,
                       phone: false,
                     ))
-                      Expanded(
+                      Flexible(
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(

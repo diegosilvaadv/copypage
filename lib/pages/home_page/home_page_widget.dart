@@ -180,11 +180,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Rubik Iso',
+                                  fontFamily: 'Rubik',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   fontSize: 20.0,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.w900,
                                 ),
                             elevation: 0.0,
                             borderSide: BorderSide(
@@ -234,7 +234,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Rubik Maze',
+                                  fontFamily: 'Rubik',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   fontSize: 20.0,
@@ -288,7 +288,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Rubik Maze',
+                                  fontFamily: 'Rubik',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   fontSize: 20.0,
@@ -327,7 +327,17 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 top: false,
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
-                  children: [],
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.network(
+                        'https://picsum.photos/seed/638/600',
+                        width: 1296.0,
+                        height: 665.0,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
                 ),
               );
             },

@@ -60,6 +60,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             img: params.getParam('img', ParamType.String),
             categoria: params.getParam('categoria', ParamType.String),
             copypage: params.getParam('copypage', ParamType.String),
+            data: params.getParam('data', ParamType.DateTime),
           ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),

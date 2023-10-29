@@ -629,6 +629,8 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                             child: FlutterFlowYoutubePlayer(
                               url:
                                   'https://youtu.be/eYJAqdnBecw?si=r0C__cIKZWd9orld',
+                              width: double.infinity,
+                              height: double.infinity,
                               autoPlay: false,
                               looping: true,
                               mute: false,

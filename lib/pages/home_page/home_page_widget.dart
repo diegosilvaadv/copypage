@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -170,17 +171,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             FFButtonWidget(
-                              onPressed: () async {
-                                context.pushNamed(
-                                  'HomePage',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType:
-                                          PageTransitionType.bottomToTop,
-                                    ),
-                                  },
-                                );
+                              onPressed: () {
+                                print('Button pressed ...');
                               },
                               text: 'HOME',
                               options: FFButtonOptions(
@@ -598,6 +590,14 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 ParamType.DateTime,
                                               ),
                                             }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                              ),
+                                            },
                                           );
                                         },
                                         child: Container(
@@ -644,9 +644,19 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                               BorderRadius
                                                                   .circular(
                                                                       8.0),
-                                                          child: Image.network(
-                                                            valueOrDefault<
-                                                                String>(
+                                                          child:
+                                                              CachedNetworkImage(
+                                                            fadeInDuration:
+                                                                Duration(
+                                                                    milliseconds:
+                                                                        500),
+                                                            fadeOutDuration:
+                                                                Duration(
+                                                                    milliseconds:
+                                                                        500),
+                                                            imageUrl:
+                                                                valueOrDefault<
+                                                                    String>(
                                                               listViewTemplatesRow
                                                                   .img,
                                                               'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages%20(1).png',
@@ -883,6 +893,14 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 ParamType.DateTime,
                                               ),
                                             }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                              ),
+                                            },
                                           );
                                         },
                                         child: Container(
@@ -929,9 +947,19 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                               BorderRadius
                                                                   .circular(
                                                                       8.0),
-                                                          child: Image.network(
-                                                            valueOrDefault<
-                                                                String>(
+                                                          child:
+                                                              CachedNetworkImage(
+                                                            fadeInDuration:
+                                                                Duration(
+                                                                    milliseconds:
+                                                                        500),
+                                                            fadeOutDuration:
+                                                                Duration(
+                                                                    milliseconds:
+                                                                        500),
+                                                            imageUrl:
+                                                                valueOrDefault<
+                                                                    String>(
                                                               listViewTemplatesRow
                                                                   .img,
                                                               'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages%20(1).png',

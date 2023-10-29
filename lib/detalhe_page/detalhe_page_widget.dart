@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -601,6 +602,34 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                 ),
                               ),
                             ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          width: 1200.0,
+                          height: 900.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
+                          child: FlutterFlowVideoPlayer(
+                            path:
+                                'https://www.youtube.com/watch?v=eYJAqdnBecw&t=1s',
+                            videoType: VideoType.network,
+                            autoPlay: false,
+                            looping: false,
+                            showControls: true,
+                            allowFullScreen: true,
+                            allowPlaybackSpeedMenu: false,
                           ),
                         ),
                       ],

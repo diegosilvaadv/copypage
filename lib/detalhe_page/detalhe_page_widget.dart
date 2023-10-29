@@ -557,69 +557,66 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Expanded(
-                                child: Container(
-                                  width: 1200.0,
-                                  height: 900.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(16.0),
-                                  ),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      await Navigator.push(
-                                        context,
-                                        PageTransition(
-                                          type: PageTransitionType.fade,
-                                          child: FlutterFlowExpandedImageView(
-                                            image: CachedNetworkImage(
-                                              fadeInDuration:
-                                                  Duration(milliseconds: 500),
-                                              fadeOutDuration:
-                                                  Duration(milliseconds: 500),
-                                              imageUrl: valueOrDefault<String>(
-                                                widget.img,
-                                                'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages.png',
-                                              ),
-                                              fit: BoxFit.contain,
-                                            ),
-                                            allowRotation: false,
-                                            tag: valueOrDefault<String>(
+                              Container(
+                                width: 1200.0,
+                                height: 900.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  borderRadius: BorderRadius.circular(16.0),
+                                ),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    await Navigator.push(
+                                      context,
+                                      PageTransition(
+                                        type: PageTransitionType.fade,
+                                        child: FlutterFlowExpandedImageView(
+                                          image: CachedNetworkImage(
+                                            fadeInDuration:
+                                                Duration(milliseconds: 500),
+                                            fadeOutDuration:
+                                                Duration(milliseconds: 500),
+                                            imageUrl: valueOrDefault<String>(
                                               widget.img,
                                               'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages.png',
                                             ),
-                                            useHeroAnimation: true,
+                                            fit: BoxFit.contain,
                                           ),
-                                        ),
-                                      );
-                                    },
-                                    child: Hero(
-                                      tag: valueOrDefault<String>(
-                                        widget.img,
-                                        'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages.png',
-                                      ),
-                                      transitionOnUserGestures: true,
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(16.0),
-                                        child: CachedNetworkImage(
-                                          fadeInDuration:
-                                              Duration(milliseconds: 500),
-                                          fadeOutDuration:
-                                              Duration(milliseconds: 500),
-                                          imageUrl: valueOrDefault<String>(
+                                          allowRotation: false,
+                                          tag: valueOrDefault<String>(
                                             widget.img,
                                             'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages.png',
                                           ),
-                                          width: 1200.0,
-                                          height: 900.0,
-                                          fit: BoxFit.fill,
+                                          useHeroAnimation: true,
                                         ),
+                                      ),
+                                    );
+                                  },
+                                  child: Hero(
+                                    tag: valueOrDefault<String>(
+                                      widget.img,
+                                      'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages.png',
+                                    ),
+                                    transitionOnUserGestures: true,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(16.0),
+                                      child: CachedNetworkImage(
+                                        fadeInDuration:
+                                            Duration(milliseconds: 500),
+                                        fadeOutDuration:
+                                            Duration(milliseconds: 500),
+                                        imageUrl: valueOrDefault<String>(
+                                          widget.img,
+                                          'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages.png',
+                                        ),
+                                        width: 1200.0,
+                                        height: 900.0,
+                                        fit: BoxFit.fill,
                                       ),
                                     ),
                                   ),
@@ -661,7 +658,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                       24.0, 0.0, 24.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).primary,
+                                  color: FlutterFlowTheme.of(context).secondary,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(

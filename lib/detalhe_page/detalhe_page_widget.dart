@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'detalhe_page_model.dart';
@@ -485,29 +486,49 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                               0.0, 6.0, 50.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Text(
-                                widget.descricao!,
-                                style: FlutterFlowTheme.of(context)
-                                    .labelSmall
-                                    .override(
-                                      fontFamily: 'Noto Serif',
-                                      fontSize: 20.0,
-                                    ),
+                              Expanded(
+                                child: Text(
+                                  widget.descricao!,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .override(
+                                        fontFamily: 'Noto Serif',
+                                        fontSize: 20.0,
+                                      ),
+                                ),
                               ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    widget.categoria!,
-                                    style: GoogleFonts.getFont(
-                                      'Rubik',
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 20.0,
-                                    ),
-                                  ),
-                                ],
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 6.0, 50.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              FaIcon(
+                                FontAwesomeIcons.tag,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 24.0,
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  widget.categoria!,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .override(
+                                        fontFamily: 'Noto Serif',
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.bold,
+                                        fontStyle: FontStyle.italic,
+                                      ),
+                                ),
                               ),
                             ],
                           ),
@@ -593,6 +614,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
+                                showLoadingIndicator: false,
                               ),
                             ],
                           ),

@@ -333,13 +333,14 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 top: false,
                 child: Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 50.0, 16.0, 16.0),
+                      EdgeInsetsDirectional.fromSTEB(100.0, 50.0, 100.0, 16.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Row(
                           mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               'Todas as Telas',
@@ -350,6 +351,37 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     fontSize: 30.0,
                                     fontWeight: FontWeight.bold,
                                   ),
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                FFButtonWidget(
+                                  onPressed: () {
+                                    print('Button pressed ...');
+                                  },
+                                  text: 'MAIS',
+                                  options: FFButtonOptions(
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 0.0, 24.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          color: Colors.white,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),

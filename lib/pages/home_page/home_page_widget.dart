@@ -65,6 +65,19 @@ class _HomePageWidgetState extends State<HomePageWidget>
         ),
       ],
     ),
+    'containerOnActionTriggerAnimation': AnimationInfo(
+      trigger: AnimationTrigger.onActionTrigger,
+      applyInitialState: true,
+      effects: [
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 300.ms,
+          begin: Offset(-40.0, 0.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
   };
 
   @override
@@ -116,7 +129,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
               pinned: false,
               floating: true,
               snap: true,
-              backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+              backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
               automaticallyImplyLeading: false,
               title: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(100.0, 0.0, 100.0, 0.0),
@@ -181,7 +194,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
+                                  .secondaryBackground,
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -235,7 +248,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
+                                  .secondaryBackground,
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -289,7 +302,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
+                                  .secondaryBackground,
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -315,6 +328,114 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             ),
                           ).animateOnActionTrigger(
                             animationsMap['buttonOnActionTriggerAnimation3']!,
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 12.0, 0.0),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                if ((Theme.of(context).brightness ==
+                                        Brightness.light) ==
+                                    true) {
+                                  setDarkModeSetting(context, ThemeMode.dark);
+                                  if (animationsMap[
+                                          'containerOnActionTriggerAnimation'] !=
+                                      null) {
+                                    animationsMap[
+                                            'containerOnActionTriggerAnimation']!
+                                        .controller
+                                        .forward(from: 0.0);
+                                  }
+                                } else {
+                                  setDarkModeSetting(context, ThemeMode.light);
+                                  if (animationsMap[
+                                          'containerOnActionTriggerAnimation'] !=
+                                      null) {
+                                    animationsMap[
+                                            'containerOnActionTriggerAnimation']!
+                                        .controller
+                                        .reverse();
+                                  }
+                                }
+                              },
+                              child: Container(
+                                width: 80.0,
+                                height: 40.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFF1F4F8),
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  border: Border.all(
+                                    color: Color(0xFFE0E3E7),
+                                    width: 1.0,
+                                  ),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      2.0, 2.0, 2.0, 2.0),
+                                  child: Stack(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(-0.90, 0.00),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  6.0, 0.0, 0.0, 0.0),
+                                          child: Icon(
+                                            Icons.wb_sunny_rounded,
+                                            color: Color(0xFF57636C),
+                                            size: 24.0,
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(1.00, 0.00),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 6.0, 0.0),
+                                          child: Icon(
+                                            Icons.mode_night_rounded,
+                                            color: Color(0xFF57636C),
+                                            size: 24.0,
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(1.00, 0.00),
+                                        child: Container(
+                                          width: 36.0,
+                                          height: 36.0,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            boxShadow: [
+                                              BoxShadow(
+                                                blurRadius: 4.0,
+                                                color: Color(0x430B0D0F),
+                                                offset: Offset(0.0, 2.0),
+                                              )
+                                            ],
+                                            borderRadius:
+                                                BorderRadius.circular(30.0),
+                                            shape: BoxShape.rectangle,
+                                          ),
+                                        ).animateOnActionTrigger(
+                                          animationsMap[
+                                              'containerOnActionTriggerAnimation']!,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ],
                       ),

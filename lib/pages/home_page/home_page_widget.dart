@@ -51,6 +51,19 @@ class _HomePageWidgetState extends State<HomePageWidget>
         ),
       ],
     ),
+    'buttonOnActionTriggerAnimation3': AnimationInfo(
+      trigger: AnimationTrigger.onActionTrigger,
+      applyInitialState: true,
+      effects: [
+        RotateEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+      ],
+    ),
   };
 
   @override
@@ -156,11 +169,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             );
                           },
                           text: 'HOME',
-                          icon: Icon(
-                            Icons.home,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 15.0,
-                          ),
                           options: FFButtonOptions(
                             height: 40.0,
                             padding: EdgeInsetsDirectional.fromSTEB(
@@ -172,9 +180,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'Rubik Iso',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold,
                                 ),
                             elevation: 0.0,
                             borderSide: BorderSide(
@@ -182,11 +192,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               width: 0.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
-                            hoverColor:
-                                FlutterFlowTheme.of(context).primaryBackground,
+                            hoverColor: Color(0x00F1F4F8),
                             hoverBorderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
+                              color: Color(0x00F1F4F8),
                               width: 0.0,
                             ),
                             hoverTextColor:
@@ -195,76 +203,113 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         ).animateOnActionTrigger(
                           animationsMap['buttonOnActionTriggerAnimation1']!,
                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 0.0, 0.0, 0.0),
-                          child: FFButtonWidget(
-                            onPressed: () async {
-                              await showDialog(
-                                context: context,
-                                builder: (alertDialogContext) {
-                                  return AlertDialog(
-                                    title: Text('olá'),
-                                    content: Text('td bem?'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () =>
-                                            Navigator.pop(alertDialogContext),
-                                        child: Text('Ok'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
-                            },
-                            text: 'CONTATO',
-                            icon: Icon(
-                              Icons.contact_page,
-                              size: 15.0,
-                            ),
-                            options: FFButtonOptions(
-                              height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context).primary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Readex Pro',
-                                    color: Colors.white,
-                                  ),
-                              elevation: 3.0,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                              hoverColor: Color(0xFFFF0004),
-                              hoverBorderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).tertiary,
-                                width: 1.0,
-                              ),
-                              hoverTextColor:
-                                  FlutterFlowTheme.of(context).warning,
-                            ),
-                          ).animateOnActionTrigger(
-                            animationsMap['buttonOnActionTriggerAnimation2']!,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              8.0, 0.0, 0.0, 0.0),
-                          child: Text(
-                            'Templates',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
+                        FFButtonWidget(
+                          onPressed: () async {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('olá'),
+                                  content: Text('td bem?'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          },
+                          text: 'CONTATO',
+                          options: FFButtonOptions(
+                            height: 40.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                24.0, 0.0, 24.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'Rubik Maze',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   fontSize: 20.0,
+                                  fontWeight: FontWeight.bold,
                                 ),
+                            elevation: 0.0,
+                            borderSide: BorderSide(
+                              color: Colors.transparent,
+                              width: 0.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                            hoverColor: Color(0x00F1F4F8),
+                            hoverBorderSide: BorderSide(
+                              color: Color(0x00F1F4F8),
+                              width: 0.0,
+                            ),
+                            hoverTextColor:
+                                FlutterFlowTheme.of(context).secondary,
                           ),
+                        ).animateOnActionTrigger(
+                          animationsMap['buttonOnActionTriggerAnimation2']!,
+                        ),
+                        FFButtonWidget(
+                          onPressed: () async {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('olá'),
+                                  content: Text('td bem?'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          },
+                          text: 'TEMPLATE',
+                          options: FFButtonOptions(
+                            height: 40.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                24.0, 0.0, 24.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Rubik Maze',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                            elevation: 0.0,
+                            borderSide: BorderSide(
+                              color: Colors.transparent,
+                              width: 0.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                            hoverColor: Color(0x00F1F4F8),
+                            hoverBorderSide: BorderSide(
+                              color: Color(0x00F1F4F8),
+                              width: 0.0,
+                            ),
+                            hoverTextColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        ).animateOnActionTrigger(
+                          animationsMap['buttonOnActionTriggerAnimation3']!,
                         ),
                       ],
                     ),

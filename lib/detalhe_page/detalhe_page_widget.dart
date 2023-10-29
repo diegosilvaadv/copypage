@@ -182,20 +182,14 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                         children: [
                           FFButtonWidget(
                             onPressed: () async {
-                              await showDialog(
-                                context: context,
-                                builder: (alertDialogContext) {
-                                  return AlertDialog(
-                                    title: Text('olá'),
-                                    content: Text('td bem?'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () =>
-                                            Navigator.pop(alertDialogContext),
-                                        child: Text('Ok'),
-                                      ),
-                                    ],
-                                  );
+                              context.pushNamed(
+                                'HomePage',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType:
+                                        PageTransitionType.bottomToTop,
+                                  ),
                                 },
                               );
                             },
@@ -488,7 +482,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 6.0, 0.0, 0.0),
+                              0.0, 6.0, 50.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -158,6 +158,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           text: 'HOME',
                           icon: Icon(
                             Icons.home,
+                            color: FlutterFlowTheme.of(context).primaryText,
                             size: 15.0,
                           ),
                           options: FFButtonOptions(
@@ -166,26 +167,30 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 24.0, 0.0, 24.0, 0.0),
                             iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color: Colors.white,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                 ),
-                            elevation: 3.0,
+                            elevation: 0.0,
                             borderSide: BorderSide(
                               color: Colors.transparent,
-                              width: 1.0,
+                              width: 0.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
-                            hoverColor: Color(0xFFFF0004),
+                            hoverColor:
+                                FlutterFlowTheme.of(context).primaryBackground,
                             hoverBorderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).tertiary,
-                              width: 1.0,
+                              color: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              width: 0.0,
                             ),
                             hoverTextColor:
-                                FlutterFlowTheme.of(context).warning,
+                                FlutterFlowTheme.of(context).secondary,
                           ),
                         ).animateOnActionTrigger(
                           animationsMap['buttonOnActionTriggerAnimation1']!,

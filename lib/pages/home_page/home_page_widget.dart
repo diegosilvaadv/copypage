@@ -89,44 +89,51 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       ),
                     ],
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      SelectionArea(
+                  if (responsiveVisibility(
+                    context: context,
+                    phone: false,
+                  ))
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        SelectionArea(
+                            child: Text(
+                          'Home ',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Readex Pro',
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                        )),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              8.0, 0.0, 0.0, 0.0),
                           child: Text(
-                        'Home ',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Readex Pro',
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                      )),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
-                        child: Text(
-                          'Contato',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Readex Pro',
-                                    fontSize: 20.0,
-                                  ),
+                            'Contato',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  fontSize: 20.0,
+                                ),
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
-                        child: Text(
-                          'Templates',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Readex Pro',
-                                    fontSize: 20.0,
-                                  ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              8.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            'Templates',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  fontSize: 20.0,
+                                ),
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
                 ],
               ),
               actions: [],

@@ -25,7 +25,20 @@ class _HomePageWidgetState extends State<HomePageWidget>
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   final animationsMap = {
-    'buttonOnActionTriggerAnimation': AnimationInfo(
+    'buttonOnActionTriggerAnimation1': AnimationInfo(
+      trigger: AnimationTrigger.onActionTrigger,
+      applyInitialState: true,
+      effects: [
+        RotateEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+      ],
+    ),
+    'buttonOnActionTriggerAnimation2': AnimationInfo(
       trigger: AnimationTrigger.onActionTrigger,
       applyInitialState: true,
       effects: [
@@ -175,19 +188,64 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 FlutterFlowTheme.of(context).warning,
                           ),
                         ).animateOnActionTrigger(
-                          animationsMap['buttonOnActionTriggerAnimation']!,
+                          animationsMap['buttonOnActionTriggerAnimation1']!,
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              8.0, 0.0, 0.0, 0.0),
-                          child: Text(
-                            'Contato',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  fontSize: 20.0,
-                                ),
+                              10.0, 0.0, 0.0, 0.0),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              await showDialog(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('olá'),
+                                    content: Text('td bem?'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            },
+                            text: 'CONTATO',
+                            icon: Icon(
+                              Icons.contact_page,
+                              size: 15.0,
+                            ),
+                            options: FFButtonOptions(
+                              height: 40.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  24.0, 0.0, 24.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.white,
+                                  ),
+                              elevation: 3.0,
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                              hoverColor: Color(0xFFFF0004),
+                              hoverBorderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).tertiary,
+                                width: 1.0,
+                              ),
+                              hoverTextColor:
+                                  FlutterFlowTheme.of(context).warning,
+                            ),
+                          ).animateOnActionTrigger(
+                            animationsMap['buttonOnActionTriggerAnimation2']!,
                           ),
                         ),
                         Padding(

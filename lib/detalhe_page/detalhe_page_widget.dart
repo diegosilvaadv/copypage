@@ -618,7 +618,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                           ),
                                           width: 1200.0,
                                           height: 900.0,
-                                          fit: BoxFit.cover,
+                                          fit: BoxFit.fill,
                                         ),
                                       ),
                                     ),

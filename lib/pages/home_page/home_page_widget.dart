@@ -81,7 +81,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         ),
                       ),
                       Text(
-                        'COPY PAGE - FLUTTERFLOW',
+                        'Copy Page | FlutterFlow',
                         style: FlutterFlowTheme.of(context).titleLarge.override(
                               fontFamily: 'Roboto',
                               fontWeight: FontWeight.w900,
@@ -132,7 +132,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               actions: [],
               centerTitle: false,
               toolbarHeight: 80.0,
-              elevation: 0.0,
+              elevation: 10.0,
             )
           ],
           body: Builder(

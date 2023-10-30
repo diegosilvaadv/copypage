@@ -170,90 +170,100 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
-                              },
-                              text: 'HOME',
-                              options: FFButtonOptions(
-                                height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Rubik',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                borderSide: BorderSide(
-                                  color: Color(0x3439D2C0),
-                                  width: 0.0,
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 5.0, 0.0),
+                              child: FFButtonWidget(
+                                onPressed: () {
+                                  print('Button pressed ...');
+                                },
+                                text: 'HOME',
+                                options: FFButtonOptions(
+                                  height: 40.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 10.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Rubik',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                  borderSide: BorderSide(
+                                    color: Color(0x3439D2C0),
+                                    width: 0.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  hoverColor: Color(0x00F1F4F8),
+                                  hoverBorderSide: BorderSide(
+                                    color: Color(0x00F1F4F8),
+                                    width: 0.0,
+                                  ),
+                                  hoverTextColor:
+                                      FlutterFlowTheme.of(context).secondary,
                                 ),
-                                borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: Color(0x00F1F4F8),
-                                hoverBorderSide: BorderSide(
-                                  color: Color(0x00F1F4F8),
-                                  width: 0.0,
-                                ),
-                                hoverTextColor:
-                                    FlutterFlowTheme.of(context).secondary,
+                              ).animateOnActionTrigger(
+                                animationsMap[
+                                    'buttonOnActionTriggerAnimation1']!,
                               ),
-                            ).animateOnActionTrigger(
-                              animationsMap['buttonOnActionTriggerAnimation1']!,
                             ),
-                            FFButtonWidget(
-                              onPressed: () async {
-                                context.pushNamed(
-                                  'Tutorial',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType: PageTransitionType.fade,
-                                    ),
-                                  },
-                                );
-                              },
-                              text: 'TUTORIAL',
-                              options: FFButtonOptions(
-                                height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Rubik',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                elevation: 0.0,
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 0.0,
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 5.0, 0.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed(
+                                    'Tutorial',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                      ),
+                                    },
+                                  );
+                                },
+                                text: 'TUTORIAL',
+                                options: FFButtonOptions(
+                                  height: 40.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 10.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Rubik',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                  elevation: 0.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 0.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  hoverColor: Color(0x00F1F4F8),
+                                  hoverBorderSide: BorderSide(
+                                    color: Color(0x00F1F4F8),
+                                    width: 0.0,
+                                  ),
+                                  hoverTextColor:
+                                      FlutterFlowTheme.of(context).secondary,
                                 ),
-                                borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: Color(0x00F1F4F8),
-                                hoverBorderSide: BorderSide(
-                                  color: Color(0x00F1F4F8),
-                                  width: 0.0,
-                                ),
-                                hoverTextColor:
-                                    FlutterFlowTheme.of(context).secondary,
+                              ).animateOnActionTrigger(
+                                animationsMap[
+                                    'buttonOnActionTriggerAnimation2']!,
                               ),
-                            ).animateOnActionTrigger(
-                              animationsMap['buttonOnActionTriggerAnimation2']!,
                             ),
                             FFButtonWidget(
                               onPressed: () async {
@@ -271,7 +281,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               options: FFButtonOptions(
                                 height: 40.0,
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 0.0, 24.0, 0.0),
+                                    10.0, 0.0, 10.0, 0.0),
                                 iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)

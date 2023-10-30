@@ -137,7 +137,7 @@ class _AlterarimgWidgetState extends State<AlterarimgWidget> {
                     child: Image.network(
                       valueOrDefault<String>(
                         _model.uploadedFileUrl,
-                        'https://abravidro.org.br/wp-content/uploads/2015/04/sem-imagem7.jpg',
+                        'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages%20(3).png',
                       ),
                       width: 1200.0,
                       height: 900.0,

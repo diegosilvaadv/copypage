@@ -146,7 +146,10 @@ class _AddWidgetState extends State<AddWidget> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.network(
-                              _model.uploadedFileUrl,
+                              valueOrDefault<String>(
+                                _model.uploadedFileUrl,
+                                'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/Add_Image_icon-icons.com_54218.png',
+                              ),
                               width: 240.0,
                               height: 180.0,
                               fit: BoxFit.cover,

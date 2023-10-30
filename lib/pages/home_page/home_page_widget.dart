@@ -1,3 +1,4 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/dash_board/senhaadm/senhaadm_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -580,27 +581,76 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               : null;
                           return Row(
                             mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                'Seja Bem Vindo(a)',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      fontSize: 20.0,
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    'Seja Bem Vindo(a)',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          fontSize: 20.0,
+                                        ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      '${rowUsersRow?.nome} !',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            fontWeight: FontWeight.w600,
+                                          ),
                                     ),
+                                  ),
+                                ],
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    5.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  '${rowUsersRow?.nome} !',
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: 'Outfit',
-                                        fontWeight: FontWeight.w600,
+                                    0.0, 0.0, 150.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    FFButtonWidget(
+                                      onPressed: () async {
+                                        GoRouter.of(context).prepareAuthEvent();
+                                        await authManager.signOut();
+                                        GoRouter.of(context)
+                                            .clearRedirectLocation();
+
+                                        context.pushNamedAuth(
+                                            'login', context.mounted);
+                                      },
+                                      text: 'SAIR',
+                                      options: FFButtonOptions(
+                                        height: 40.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: Color(0xFF88180F),
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              color: Colors.white,
+                                            ),
+                                        elevation: 3.0,
+                                        borderSide: BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],

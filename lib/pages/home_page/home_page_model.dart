@@ -1,3 +1,4 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/dash_board/senhaadm/senhaadm_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';

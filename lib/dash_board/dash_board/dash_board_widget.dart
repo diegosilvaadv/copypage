@@ -132,14 +132,24 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                         ),
                       ),
                       Expanded(
-                        child: Text(
-                          'Copy Page | FlutterFlow',
-                          style:
-                              FlutterFlowTheme.of(context).titleLarge.override(
-                                    fontFamily: 'Rubik',
-                                    fontSize: 30.0,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed('HomePage');
+                          },
+                          child: Text(
+                            'Copy Page | FlutterFlow',
+                            style: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .override(
+                                  fontFamily: 'Rubik',
+                                  fontSize: 30.0,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                          ),
                         ),
                       ),
                     ],

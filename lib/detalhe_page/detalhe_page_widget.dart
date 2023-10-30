@@ -563,37 +563,25 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                           Duration(milliseconds: 500),
                                       fadeOutDuration:
                                           Duration(milliseconds: 500),
-                                      imageUrl: valueOrDefault<String>(
-                                        widget.img,
-                                        'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages.png',
-                                      ),
+                                      imageUrl: widget.img!,
                                       fit: BoxFit.contain,
                                     ),
                                     allowRotation: true,
-                                    tag: valueOrDefault<String>(
-                                      widget.img,
-                                      'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages.png',
-                                    ),
+                                    tag: widget.img!,
                                     useHeroAnimation: true,
                                   ),
                                 ),
                               );
                             },
                             child: Hero(
-                              tag: valueOrDefault<String>(
-                                widget.img,
-                                'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages.png',
-                              ),
+                              tag: widget.img!,
                               transitionOnUserGestures: true,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(16.0),
                                 child: CachedNetworkImage(
                                   fadeInDuration: Duration(milliseconds: 500),
                                   fadeOutDuration: Duration(milliseconds: 500),
-                                  imageUrl: valueOrDefault<String>(
-                                    widget.img,
-                                    'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages.png',
-                                  ),
+                                  imageUrl: widget.img!,
                                   width: 1200.0,
                                   height: 900.0,
                                   fit: BoxFit.cover,

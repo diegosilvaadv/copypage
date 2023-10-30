@@ -1,4 +1,5 @@
 import '/backend/supabase/supabase.dart';
+import '/dash_board/senhaadm/senhaadm_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -127,7 +128,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             automaticallyImplyLeading: false,
             title: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -161,6 +162,40 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   ),
                             ),
                           ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.transparent,
+                                enableDrag: false,
+                                context: context,
+                                builder: (context) {
+                                  return GestureDetector(
+                                    onTap: () => _model
+                                            .unfocusNode.canRequestFocus
+                                        ? FocusScope.of(context)
+                                            .requestFocus(_model.unfocusNode)
+                                        : FocusScope.of(context).unfocus(),
+                                    child: Padding(
+                                      padding: MediaQuery.viewInsetsOf(context),
+                                      child: Container(
+                                        height: 750.0,
+                                        child: SenhaadmWidget(),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ).then((value) => safeSetState(() {}));
+                            },
+                            child: Text(
+                              'adm',
+                              style: FlutterFlowTheme.of(context).bodyMedium,
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -185,7 +220,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           ),
                           Expanded(
                             child: Text(
-                              'Copy Page | FlutterFlow',
+                              'Copy Page',
                               style: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .override(

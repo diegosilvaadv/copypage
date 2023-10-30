@@ -123,7 +123,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(100.0, 0.0, 100.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

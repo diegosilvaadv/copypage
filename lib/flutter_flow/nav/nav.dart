@@ -72,6 +72,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'contato',
           path: '/contato',
           builder: (context, params) => ContatoWidget(),
+        ),
+        FFRoute(
+          name: 'DashBoard',
+          path: '/dashBoard',
+          builder: (context, params) => DashBoardWidget(),
+        ),
+        FFRoute(
+          name: 'templates',
+          path: '/templates',
+          builder: (context, params) => TemplatesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

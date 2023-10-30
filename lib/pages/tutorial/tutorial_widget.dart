@@ -263,7 +263,15 @@ class _TutorialWidgetState extends State<TutorialWidget>
                           ),
                           FFButtonWidget(
                             onPressed: () async {
-                              context.pushNamed('contato');
+                              context.pushNamed(
+                                'contato',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                  ),
+                                },
+                              );
                             },
                             text: 'CONTATO',
                             options: FFButtonOptions(

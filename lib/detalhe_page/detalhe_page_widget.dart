@@ -682,7 +682,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                               ),
                             );
                           },
-                          text: 'COPIAR CÓDIGO DA PAGE',
+                          text: 'Copiar Código da Página',
                           options: FFButtonOptions(
                             height: 40.0,
                             padding: EdgeInsetsDirectional.fromSTEB(

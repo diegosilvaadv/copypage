@@ -758,9 +758,46 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                           0.0),
                                                               child:
                                                                   FFButtonWidget(
-                                                                onPressed: () {
-                                                                  print(
-                                                                      'Button pressed ...');
+                                                                onPressed:
+                                                                    () async {
+                                                                  var confirmDialogResponse =
+                                                                      await showDialog<
+                                                                              bool>(
+                                                                            context:
+                                                                                context,
+                                                                            builder:
+                                                                                (alertDialogContext) {
+                                                                              return AlertDialog(
+                                                                                title: Text('DELETAR ESSA PAG?'),
+                                                                                content: Text('tem certeza?'),
+                                                                                actions: [
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                    child: Text('Cancelar'),
+                                                                                  ),
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                    child: Text('Confirmar'),
+                                                                                  ),
+                                                                                ],
+                                                                              );
+                                                                            },
+                                                                          ) ??
+                                                                          false;
+                                                                  if (confirmDialogResponse) {
+                                                                    await TemplatesTable()
+                                                                        .delete(
+                                                                      matchingRows:
+                                                                          (rows) =>
+                                                                              rows.eq(
+                                                                        'id',
+                                                                        listViewTemplatesRow
+                                                                            .id,
+                                                                      ),
+                                                                    );
+                                                                  } else {
+                                                                    return;
+                                                                  }
                                                                 },
                                                                 text: 'EXCLUIR',
                                                                 options:

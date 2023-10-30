@@ -210,20 +210,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             ),
                             FFButtonWidget(
                               onPressed: () async {
-                                await showDialog(
-                                  context: context,
-                                  builder: (alertDialogContext) {
-                                    return AlertDialog(
-                                      title: Text('olá'),
-                                      content: Text('td bem?'),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () =>
-                                              Navigator.pop(alertDialogContext),
-                                          child: Text('Ok'),
-                                        ),
-                                      ],
-                                    );
+                                context.pushNamed(
+                                  'Tutorial',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                    ),
                                   },
                                 );
                               },
@@ -264,24 +257,17 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             ),
                             FFButtonWidget(
                               onPressed: () async {
-                                await showDialog(
-                                  context: context,
-                                  builder: (alertDialogContext) {
-                                    return AlertDialog(
-                                      title: Text('olá'),
-                                      content: Text('td bem?'),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () =>
-                                              Navigator.pop(alertDialogContext),
-                                          child: Text('Ok'),
-                                        ),
-                                      ],
-                                    );
+                                context.pushNamed(
+                                  'contato',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                    ),
                                   },
                                 );
                               },
-                              text: 'TEMPLATE',
+                              text: 'CONTATO',
                               options: FFButtonOptions(
                                 height: 40.0,
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -354,10 +340,12 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   width: 80.0,
                                   height: 40.0,
                                   decoration: BoxDecoration(
-                                    color: Color(0xFFF1F4F8),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
                                     borderRadius: BorderRadius.circular(20.0),
                                     border: Border.all(
-                                      color: Color(0xFFE0E3E7),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
                                       width: 1.0,
                                     ),
                                   ),
@@ -376,7 +364,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                     6.0, 0.0, 0.0, 0.0),
                                             child: Icon(
                                               Icons.wb_sunny_rounded,
-                                              color: Color(0xFF57636C),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
                                               size: 24.0,
                                             ),
                                           ),
@@ -402,7 +392,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             width: 36.0,
                                             height: 36.0,
                                             decoration: BoxDecoration(
-                                              color: Colors.white,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
                                               boxShadow: [
                                                 BoxShadow(
                                                   blurRadius: 4.0,

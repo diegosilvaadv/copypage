@@ -8,19 +8,19 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'tutorial_model.dart';
-export 'tutorial_model.dart';
+import 'contato_model.dart';
+export 'contato_model.dart';
 
-class TutorialWidget extends StatefulWidget {
-  const TutorialWidget({Key? key}) : super(key: key);
+class ContatoWidget extends StatefulWidget {
+  const ContatoWidget({Key? key}) : super(key: key);
 
   @override
-  _TutorialWidgetState createState() => _TutorialWidgetState();
+  _ContatoWidgetState createState() => _ContatoWidgetState();
 }
 
-class _TutorialWidgetState extends State<TutorialWidget>
+class _ContatoWidgetState extends State<ContatoWidget>
     with TickerProviderStateMixin {
-  late TutorialModel _model;
+  late ContatoModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -82,7 +82,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => TutorialModel());
+    _model = createModel(context, () => ContatoModel());
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -166,8 +166,16 @@ class _TutorialWidgetState extends State<TutorialWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              context.pushNamed(
+                                'HomePage',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                  ),
+                                },
+                              );
                             },
                             text: 'HOME',
                             options: FFButtonOptions(
@@ -204,78 +212,17 @@ class _TutorialWidgetState extends State<TutorialWidget>
                           ),
                           FFButtonWidget(
                             onPressed: () async {
-                              await showDialog(
-                                context: context,
-                                builder: (alertDialogContext) {
-                                  return AlertDialog(
-                                    title: Text('olá'),
-                                    content: Text('td bem?'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () =>
-                                            Navigator.pop(alertDialogContext),
-                                        child: Text('Ok'),
-                                      ),
-                                    ],
-                                  );
+                              context.pushNamed(
+                                'Tutorial',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                  ),
                                 },
                               );
                             },
                             text: 'TUTORIAL',
-                            options: FFButtonOptions(
-                              height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Rubik',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                              elevation: 0.0,
-                              borderSide: BorderSide(
-                                color: Color(0x3F39D2C0),
-                                width: 0.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                              hoverColor: Color(0x00F1F4F8),
-                              hoverBorderSide: BorderSide(
-                                color: Color(0x00F1F4F8),
-                                width: 0.0,
-                              ),
-                              hoverTextColor:
-                                  FlutterFlowTheme.of(context).secondary,
-                            ),
-                          ).animateOnActionTrigger(
-                            animationsMap['buttonOnActionTriggerAnimation2']!,
-                          ),
-                          FFButtonWidget(
-                            onPressed: () async {
-                              await showDialog(
-                                context: context,
-                                builder: (alertDialogContext) {
-                                  return AlertDialog(
-                                    title: Text('olá'),
-                                    content: Text('td bem?'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () =>
-                                            Navigator.pop(alertDialogContext),
-                                        child: Text('Ok'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
-                            },
-                            text: 'TEMPLATE',
                             options: FFButtonOptions(
                               height: 40.0,
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -308,7 +255,50 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                   FlutterFlowTheme.of(context).secondary,
                             ),
                           ).animateOnActionTrigger(
-                            animationsMap['buttonOnActionTriggerAnimation3']!,
+                            animationsMap['buttonOnActionTriggerAnimation2']!,
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 10.0, 0.0),
+                            child: FFButtonWidget(
+                              onPressed: () {
+                                print('Button pressed ...');
+                              },
+                              text: 'CONTATO',
+                              options: FFButtonOptions(
+                                height: 40.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 0.0, 24.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Rubik',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                elevation: 0.0,
+                                borderSide: BorderSide(
+                                  color: Color(0x3F39D2C0),
+                                  width: 0.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                                hoverColor: Color(0x00F1F4F8),
+                                hoverBorderSide: BorderSide(
+                                  color: Color(0x00F1F4F8),
+                                  width: 0.0,
+                                ),
+                                hoverTextColor:
+                                    FlutterFlowTheme.of(context).secondary,
+                              ),
+                            ).animateOnActionTrigger(
+                              animationsMap['buttonOnActionTriggerAnimation3']!,
+                            ),
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
@@ -347,10 +337,12 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                 width: 80.0,
                                 height: 40.0,
                                 decoration: BoxDecoration(
-                                  color: Color(0xFFF1F4F8),
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
                                   borderRadius: BorderRadius.circular(20.0),
                                   border: Border.all(
-                                    color: Color(0xFFE0E3E7),
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
                                     width: 1.0,
                                   ),
                                 ),
@@ -369,7 +361,8 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                                   6.0, 0.0, 0.0, 0.0),
                                           child: Icon(
                                             Icons.wb_sunny_rounded,
-                                            color: Color(0xFF57636C),
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
                                             size: 24.0,
                                           ),
                                         ),
@@ -395,7 +388,8 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                           width: 36.0,
                                           height: 36.0,
                                           decoration: BoxDecoration(
-                                            color: Colors.white,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
                                             boxShadow: [
                                               BoxShadow(
                                                 blurRadius: 4.0,
@@ -429,6 +423,13 @@ class _TutorialWidgetState extends State<TutorialWidget>
           centerTitle: false,
           toolbarHeight: 80.0,
           elevation: 10.0,
+        ),
+        body: SafeArea(
+          top: true,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [],
+          ),
         ),
       ),
     );

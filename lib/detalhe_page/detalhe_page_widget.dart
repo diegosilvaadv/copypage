@@ -142,7 +142,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-          automaticallyImplyLeading: true,
+          automaticallyImplyLeading: false,
           title: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(100.0, 0.0, 100.0, 0.0),
             child: Row(
@@ -186,10 +186,111 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 5.0, 0.0),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                context.pushNamed(
+                                  'HomePage',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                    ),
+                                  },
+                                );
+                              },
+                              text: 'HOME',
+                              options: FFButtonOptions(
+                                height: 40.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 10.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Rubik',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 0.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                                hoverColor: Color(0x00F1F4F8),
+                                hoverBorderSide: BorderSide(
+                                  color: Color(0x00F1F4F8),
+                                  width: 0.0,
+                                ),
+                                hoverTextColor:
+                                    FlutterFlowTheme.of(context).secondary,
+                              ),
+                            ).animateOnActionTrigger(
+                              animationsMap['buttonOnActionTriggerAnimation1']!,
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 5.0, 0.0),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                context.pushNamed(
+                                  'Tutorial',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                    ),
+                                  },
+                                );
+                              },
+                              text: 'TUTORIAL',
+                              options: FFButtonOptions(
+                                height: 40.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 10.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Rubik',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                elevation: 0.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 0.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                                hoverColor: Color(0x00F1F4F8),
+                                hoverBorderSide: BorderSide(
+                                  color: Color(0x00F1F4F8),
+                                  width: 0.0,
+                                ),
+                                hoverTextColor:
+                                    FlutterFlowTheme.of(context).secondary,
+                              ),
+                            ).animateOnActionTrigger(
+                              animationsMap['buttonOnActionTriggerAnimation2']!,
+                            ),
+                          ),
                           FFButtonWidget(
                             onPressed: () async {
                               context.pushNamed(
-                                'HomePage',
+                                'contato',
                                 extra: <String, dynamic>{
                                   kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,
@@ -198,65 +299,11 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                 },
                               );
                             },
-                            text: 'HOME',
+                            text: 'CONTATO',
                             options: FFButtonOptions(
                               height: 40.0,
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Rubik',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                              elevation: 0.0,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 0.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                              hoverColor: Color(0x00F1F4F8),
-                              hoverBorderSide: BorderSide(
-                                color: Color(0x00F1F4F8),
-                                width: 0.0,
-                              ),
-                              hoverTextColor:
-                                  FlutterFlowTheme.of(context).secondary,
-                            ),
-                          ).animateOnActionTrigger(
-                            animationsMap['buttonOnActionTriggerAnimation1']!,
-                          ),
-                          FFButtonWidget(
-                            onPressed: () async {
-                              await showDialog(
-                                context: context,
-                                builder: (alertDialogContext) {
-                                  return AlertDialog(
-                                    title: Text('olá'),
-                                    content: Text('td bem?'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () =>
-                                            Navigator.pop(alertDialogContext),
-                                        child: Text('Ok'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
-                            },
-                            text: 'TUTORIAL',
-                            options: FFButtonOptions(
-                              height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  24.0, 0.0, 24.0, 0.0),
+                                  10.0, 0.0, 10.0, 0.0),
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
@@ -272,61 +319,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                   ),
                               elevation: 0.0,
                               borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 0.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                              hoverColor: Color(0x00F1F4F8),
-                              hoverBorderSide: BorderSide(
-                                color: Color(0x00F1F4F8),
-                                width: 0.0,
-                              ),
-                              hoverTextColor:
-                                  FlutterFlowTheme.of(context).secondary,
-                            ),
-                          ).animateOnActionTrigger(
-                            animationsMap['buttonOnActionTriggerAnimation2']!,
-                          ),
-                          FFButtonWidget(
-                            onPressed: () async {
-                              await showDialog(
-                                context: context,
-                                builder: (alertDialogContext) {
-                                  return AlertDialog(
-                                    title: Text('olá'),
-                                    content: Text('td bem?'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () =>
-                                            Navigator.pop(alertDialogContext),
-                                        child: Text('Ok'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
-                            },
-                            text: 'TEMPLATE',
-                            options: FFButtonOptions(
-                              height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Rubik',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                              elevation: 0.0,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
+                                color: Color(0x3F39D2C0),
                                 width: 0.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),
@@ -343,7 +336,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 12.0, 0.0),
+                                20.0, 0.0, 12.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -378,10 +371,12 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                 width: 80.0,
                                 height: 40.0,
                                 decoration: BoxDecoration(
-                                  color: Color(0xFFF1F4F8),
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
                                   borderRadius: BorderRadius.circular(20.0),
                                   border: Border.all(
-                                    color: Color(0xFFE0E3E7),
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
                                     width: 1.0,
                                   ),
                                 ),
@@ -400,7 +395,8 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                                   6.0, 0.0, 0.0, 0.0),
                                           child: Icon(
                                             Icons.wb_sunny_rounded,
-                                            color: Color(0xFF57636C),
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
                                             size: 24.0,
                                           ),
                                         ),
@@ -426,7 +422,8 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                           width: 36.0,
                                           height: 36.0,
                                           decoration: BoxDecoration(
-                                            color: Colors.white,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
                                             boxShadow: [
                                               BoxShadow(
                                                 blurRadius: 4.0,

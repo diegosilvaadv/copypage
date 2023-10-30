@@ -628,8 +628,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
+                                    color: Color(0xFF875FD0),
                                     width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
@@ -691,7 +690,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                 24.0, 0.0, 24.0, 0.0),
                             iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).secondary,
+                            color: Color(0xFF875FD0),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(

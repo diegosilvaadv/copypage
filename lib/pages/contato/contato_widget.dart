@@ -187,8 +187,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                     10.0, 0.0, 10.0, 0.0),
                                 iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                color: Color(0x0014181B),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(

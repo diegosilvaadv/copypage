@@ -421,53 +421,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                             fontWeight: FontWeight.bold,
                           ),
                     ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
-                          },
-                          text: 'MAIS',
-                          options: FFButtonOptions(
-                            height: 40.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  color: Colors.white,
-                                ),
-                            elevation: 3.0,
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
-                      ],
-                    ),
                   ],
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 0.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        'Editar Telas',
-                        style: FlutterFlowTheme.of(context).labelLarge.override(
-                              fontFamily: 'Readex Pro',
-                              fontSize: 20.0,
-                            ),
-                      ),
-                    ],
-                  ),
                 ),
                 Expanded(
                   child: Padding(
@@ -592,8 +546,12 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                   .circular(
                                                                       8.0),
                                                           child: Image.network(
-                                                            listViewTemplatesRow
-                                                                .img!,
+                                                            valueOrDefault<
+                                                                String>(
+                                                              listViewTemplatesRow
+                                                                  .img,
+                                                              'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages%20(4).png',
+                                                            ),
                                                             width: 100.0,
                                                             height: 100.0,
                                                             fit: BoxFit.cover,

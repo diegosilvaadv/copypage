@@ -426,8 +426,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       10.0, 0.0, 10.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                  color: Color(0x7C5765F2),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -476,8 +475,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       10.0, 0.0, 10.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                  color: Color(0x575765F2),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(

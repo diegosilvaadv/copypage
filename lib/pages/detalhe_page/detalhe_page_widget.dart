@@ -85,6 +85,32 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
         ),
       ],
     ),
+    'buttonOnActionTriggerAnimation4': AnimationInfo(
+      trigger: AnimationTrigger.onActionTrigger,
+      applyInitialState: true,
+      effects: [
+        RotateEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+      ],
+    ),
+    'buttonOnActionTriggerAnimation5': AnimationInfo(
+      trigger: AnimationTrigger.onActionTrigger,
+      applyInitialState: true,
+      effects: [
+        RotateEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+      ],
+    ),
     'containerOnActionTriggerAnimation': AnimationInfo(
       trigger: AnimationTrigger.onActionTrigger,
       applyInitialState: true,
@@ -342,6 +368,102 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                           ).animateOnActionTrigger(
                             animationsMap['buttonOnActionTriggerAnimation3']!,
                           ),
+                          if (currentUserEmailVerified)
+                            FFButtonWidget(
+                              onPressed: () async {
+                                context.pushNamed(
+                                  'contato',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                    ),
+                                  },
+                                );
+                              },
+                              text: 'PERFIL',
+                              options: FFButtonOptions(
+                                height: 40.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 10.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: Color(0x7C5765F2),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Rubik',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                elevation: 0.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 0.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                                hoverColor: Color(0x00F1F4F8),
+                                hoverBorderSide: BorderSide(
+                                  color: Color(0x00F1F4F8),
+                                  width: 0.0,
+                                ),
+                                hoverTextColor:
+                                    FlutterFlowTheme.of(context).secondary,
+                              ),
+                              showLoadingIndicator: false,
+                            ).animateOnActionTrigger(
+                              animationsMap['buttonOnActionTriggerAnimation4']!,
+                            ),
+                          if (currentUserEmailVerified == false)
+                            FFButtonWidget(
+                              onPressed: () async {
+                                context.pushNamed(
+                                  'login',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                    ),
+                                  },
+                                );
+                              },
+                              text: 'CRIAR CONTA',
+                              options: FFButtonOptions(
+                                height: 40.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 10.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: Color(0x575765F2),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Rubik',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                elevation: 0.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 0.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                                hoverColor: Color(0x00F1F4F8),
+                                hoverBorderSide: BorderSide(
+                                  color: Color(0x00F1F4F8),
+                                  width: 0.0,
+                                ),
+                                hoverTextColor:
+                                    FlutterFlowTheme.of(context).secondary,
+                              ),
+                              showLoadingIndicator: false,
+                            ).animateOnActionTrigger(
+                              animationsMap['buttonOnActionTriggerAnimation5']!,
+                            ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 12.0, 0.0),

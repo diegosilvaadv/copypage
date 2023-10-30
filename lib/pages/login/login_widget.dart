@@ -1374,13 +1374,25 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
                                                   child: FFButtonWidget(
-                                                    onPressed: () {
-                                                      print(
-                                                          'Button pressed ...');
+                                                    onPressed: () async {
+                                                      context.pushNamed(
+                                                        'HomePage',
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          kTransitionInfoKey:
+                                                              TransitionInfo(
+                                                            hasTransition: true,
+                                                            transitionType:
+                                                                PageTransitionType
+                                                                    .fade,
+                                                          ),
+                                                        },
+                                                      );
                                                     },
-                                                    text: 'Continue com Apple',
-                                                    icon: FaIcon(
-                                                      FontAwesomeIcons.apple,
+                                                    text:
+                                                        'Acessar sem Criar Conta',
+                                                    icon: Icon(
+                                                      Icons.no_accounts,
                                                       size: 20.0,
                                                     ),
                                                     options: FFButtonOptions(

@@ -558,41 +558,127 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                           final listViewTemplatesRow =
                                               listViewTemplatesRowList[
                                                   listViewIndex];
-                                          return Container(
-                                            width: 100.0,
-                                            height: 119.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                            ),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          10.0, 0.0, 10.0, 0.0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
-                                                        child: Image.network(
-                                                          listViewTemplatesRow
-                                                              .img!,
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.cover,
+                                          return Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 10.0),
+                                            child: Container(
+                                              width: 100.0,
+                                              height: 119.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                borderRadius:
+                                                    BorderRadius.circular(16.0),
+                                              ),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(10.0, 0.0,
+                                                                10.0, 0.0),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                          child: Image.network(
+                                                            listViewTemplatesRow
+                                                                .img!,
+                                                            width: 100.0,
+                                                            height: 100.0,
+                                                            fit: BoxFit.cover,
+                                                          ),
                                                         ),
-                                                      ),
-                                                      Expanded(
-                                                        child: Padding(
+                                                        Expanded(
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        10.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Expanded(
+                                                                      child:
+                                                                          Text(
+                                                                        listViewTemplatesRow
+                                                                            .titulo!,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .headlineSmall
+                                                                            .override(
+                                                                              fontFamily: 'Outfit',
+                                                                              fontSize: 30.0,
+                                                                            ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                                Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Expanded(
+                                                                      child:
+                                                                          Text(
+                                                                        listViewTemplatesRow
+                                                                            .descricao!,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium,
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                                Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Expanded(
+                                                                      child:
+                                                                          Text(
+                                                                        listViewTemplatesRow
+                                                                            .categoria!,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Readex Pro',
+                                                                              color: FlutterFlowTheme.of(context).secondary,
+                                                                              fontSize: 20.0,
+                                                                              fontWeight: FontWeight.w500,
+                                                                            ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
                                                                   .fromSTEB(
@@ -604,250 +690,168 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                             mainAxisSize:
                                                                 MainAxisSize
                                                                     .max,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
                                                             children: [
-                                                              Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Expanded(
-                                                                    child: Text(
-                                                                      listViewTemplatesRow
-                                                                          .titulo!,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Outfit',
-                                                                            fontSize:
-                                                                                30.0,
-                                                                          ),
+                                                              Padding(
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        10.0,
+                                                                        0.0,
+                                                                        10.0,
+                                                                        10.0),
+                                                                child:
+                                                                    FFButtonWidget(
+                                                                  onPressed:
+                                                                      () {
+                                                                    print(
+                                                                        'Button pressed ...');
+                                                                  },
+                                                                  text:
+                                                                      'EDITAR',
+                                                                  options:
+                                                                      FFButtonOptions(
+                                                                    height:
+                                                                        40.0,
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            24.0,
+                                                                            0.0,
+                                                                            24.0,
+                                                                            0.0),
+                                                                    iconPadding:
+                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondary,
+                                                                    textStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          color:
+                                                                              Colors.white,
+                                                                        ),
+                                                                    elevation:
+                                                                        3.0,
+                                                                    borderSide:
+                                                                        BorderSide(
+                                                                      color: Colors
+                                                                          .transparent,
+                                                                      width:
+                                                                          1.0,
                                                                     ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
                                                                   ),
-                                                                ],
+                                                                ),
                                                               ),
-                                                              Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Expanded(
-                                                                    child: Text(
-                                                                      listViewTemplatesRow
-                                                                          .descricao!,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                              Padding(
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        10.0,
+                                                                        0.0,
+                                                                        10.0,
+                                                                        0.0),
+                                                                child:
+                                                                    FFButtonWidget(
+                                                                  onPressed:
+                                                                      () async {
+                                                                    var confirmDialogResponse =
+                                                                        await showDialog<bool>(
+                                                                              context: context,
+                                                                              builder: (alertDialogContext) {
+                                                                                return AlertDialog(
+                                                                                  title: Text('DELETAR ESSA PAG?'),
+                                                                                  content: Text('tem certeza?'),
+                                                                                  actions: [
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                      child: Text('Cancelar'),
+                                                                                    ),
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                      child: Text('Confirmar'),
+                                                                                    ),
+                                                                                  ],
+                                                                                );
+                                                                              },
+                                                                            ) ??
+                                                                            false;
+                                                                    if (confirmDialogResponse) {
+                                                                      await TemplatesTable()
+                                                                          .delete(
+                                                                        matchingRows:
+                                                                            (rows) =>
+                                                                                rows.eq(
+                                                                          'id',
+                                                                          listViewTemplatesRow
+                                                                              .id,
+                                                                        ),
+                                                                      );
+                                                                    } else {
+                                                                      return;
+                                                                    }
+                                                                  },
+                                                                  text:
+                                                                      'EXCLUIR',
+                                                                  options:
+                                                                      FFButtonOptions(
+                                                                    height:
+                                                                        40.0,
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            24.0,
+                                                                            0.0,
+                                                                            24.0,
+                                                                            0.0),
+                                                                    iconPadding:
+                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    color: Color(
+                                                                        0xFFFF0004),
+                                                                    textStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          color:
+                                                                              Colors.white,
+                                                                        ),
+                                                                    elevation:
+                                                                        3.0,
+                                                                    borderSide:
+                                                                        BorderSide(
+                                                                      color: Colors
+                                                                          .transparent,
+                                                                      width:
+                                                                          1.0,
                                                                     ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
                                                                   ),
-                                                                ],
-                                                              ),
-                                                              Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Expanded(
-                                                                    child: Text(
-                                                                      listViewTemplatesRow
-                                                                          .categoria!,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Readex Pro',
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondary,
-                                                                            fontSize:
-                                                                                20.0,
-                                                                            fontWeight:
-                                                                                FontWeight.w500,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                ],
+                                                                ),
                                                               ),
                                                             ],
                                                           ),
                                                         ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    10.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          10.0),
-                                                              child:
-                                                                  FFButtonWidget(
-                                                                onPressed: () {
-                                                                  print(
-                                                                      'Button pressed ...');
-                                                                },
-                                                                text: 'EDITAR',
-                                                                options:
-                                                                    FFButtonOptions(
-                                                                  height: 40.0,
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          24.0,
-                                                                          0.0,
-                                                                          24.0,
-                                                                          0.0),
-                                                                  iconPadding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondary,
-                                                                  textStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Readex Pro',
-                                                                        color: Colors
-                                                                            .white,
-                                                                      ),
-                                                                  elevation:
-                                                                      3.0,
-                                                                  borderSide:
-                                                                      BorderSide(
-                                                                    color: Colors
-                                                                        .transparent,
-                                                                    width: 1.0,
-                                                                  ),
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              8.0),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
-                                                              child:
-                                                                  FFButtonWidget(
-                                                                onPressed:
-                                                                    () async {
-                                                                  var confirmDialogResponse =
-                                                                      await showDialog<
-                                                                              bool>(
-                                                                            context:
-                                                                                context,
-                                                                            builder:
-                                                                                (alertDialogContext) {
-                                                                              return AlertDialog(
-                                                                                title: Text('DELETAR ESSA PAG?'),
-                                                                                content: Text('tem certeza?'),
-                                                                                actions: [
-                                                                                  TextButton(
-                                                                                    onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                    child: Text('Cancelar'),
-                                                                                  ),
-                                                                                  TextButton(
-                                                                                    onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                    child: Text('Confirmar'),
-                                                                                  ),
-                                                                                ],
-                                                                              );
-                                                                            },
-                                                                          ) ??
-                                                                          false;
-                                                                  if (confirmDialogResponse) {
-                                                                    await TemplatesTable()
-                                                                        .delete(
-                                                                      matchingRows:
-                                                                          (rows) =>
-                                                                              rows.eq(
-                                                                        'id',
-                                                                        listViewTemplatesRow
-                                                                            .id,
-                                                                      ),
-                                                                    );
-                                                                  } else {
-                                                                    return;
-                                                                  }
-                                                                },
-                                                                text: 'EXCLUIR',
-                                                                options:
-                                                                    FFButtonOptions(
-                                                                  height: 40.0,
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          24.0,
-                                                                          0.0,
-                                                                          24.0,
-                                                                          0.0),
-                                                                  iconPadding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  color: Color(
-                                                                      0xFFFF0004),
-                                                                  textStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Readex Pro',
-                                                                        color: Colors
-                                                                            .white,
-                                                                      ),
-                                                                  elevation:
-                                                                      3.0,
-                                                                  borderSide:
-                                                                      BorderSide(
-                                                                    color: Colors
-                                                                        .transparent,
-                                                                    width: 1.0,
-                                                                  ),
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              8.0),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    ],
+                                                      ],
+                                                    ),
                                                   ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
                                           );
                                         },

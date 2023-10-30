@@ -253,7 +253,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                             onPressed: () async {
                               context.pushNamed('contato');
                             },
-                            text: 'TEMPLATE',
+                            text: 'CONTATO',
                             options: FFButtonOptions(
                               height: 40.0,
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -290,7 +290,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 12.0, 0.0),
+                                20.0, 0.0, 12.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,

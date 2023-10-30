@@ -159,16 +159,8 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
-                              onPressed: () async {
-                                context.pushNamed(
-                                  'HomePage',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType: PageTransitionType.fade,
-                                    ),
-                                  },
-                                );
+                              onPressed: () {
+                                print('Button pressed ...');
                               },
                               text: 'DashBoard',
                               options: FFButtonOptions(
@@ -213,7 +205,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                             child: FFButtonWidget(
                               onPressed: () async {
                                 context.pushNamed(
-                                  'Tutorial',
+                                  'templates',
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,

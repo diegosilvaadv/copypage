@@ -163,7 +163,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                             child: FFButtonWidget(
                               onPressed: () async {
                                 context.pushNamed(
-                                  'HomePage',
+                                  'DashBoard',
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
@@ -212,16 +212,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
-                              onPressed: () async {
-                                context.pushNamed(
-                                  'Tutorial',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType: PageTransitionType.fade,
-                                    ),
-                                  },
-                                );
+                              onPressed: () {
+                                print('Button pressed ...');
                               },
                               text: 'Templates',
                               options: FFButtonOptions(

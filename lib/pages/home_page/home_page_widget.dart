@@ -553,7 +553,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    if (currentUserUid == currentUserUid)
+                    if (currentUserEmailVerified)
                       Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),

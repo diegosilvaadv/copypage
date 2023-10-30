@@ -1,12 +1,13 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'senhaerrada_widget.dart' show SenhaerradaWidget;
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'criarconta_widget.dart' show CriarcontaWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class SenhaerradaModel extends FlutterFlowModel<SenhaerradaWidget> {
+class CriarcontaModel extends FlutterFlowModel<CriarcontaWidget> {
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}

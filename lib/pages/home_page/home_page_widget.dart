@@ -558,7 +558,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: FutureBuilder<List<UsersRow>>(
                         future: UsersTable().querySingleRow(
-                          queryFn: (q) => q,
+                          queryFn: (q) => q.eq(
+                            'id',
+                            currentUserUid,
+                          ),
                         ),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.

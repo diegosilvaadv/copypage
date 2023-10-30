@@ -703,6 +703,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                 categoria: listViewTemplatesRow.categoria!,
                                                                                 codpag: listViewTemplatesRow.copypage!,
                                                                                 img: listViewTemplatesRow.img!,
+                                                                                id: listViewTemplatesRow.id,
                                                                               ),
                                                                             ),
                                                                           ),

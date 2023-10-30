@@ -18,6 +18,7 @@ class EditarWidget extends StatefulWidget {
     required this.categoria,
     required this.codpag,
     required this.img,
+    required this.id,
   }) : super(key: key);
 
   final String? titulo;
@@ -25,6 +26,7 @@ class EditarWidget extends StatefulWidget {
   final String? categoria;
   final String? codpag;
   final String? img;
+  final int? id;
 
   @override
   _EditarWidgetState createState() => _EditarWidgetState();
@@ -426,7 +428,10 @@ class _EditarWidgetState extends State<EditarWidget> {
                               'categoria': _model.categoriaController.text,
                               'copypage': _model.codpagController.text,
                             },
-                            matchingRows: (rows) => rows,
+                            matchingRows: (rows) => rows.eq(
+                              'id',
+                              widget.id,
+                            ),
                           );
                           Navigator.pop(context);
                         },

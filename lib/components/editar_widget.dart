@@ -424,7 +424,7 @@ class _EditarWidgetState extends State<EditarWidget> {
                             data: {
                               'titulo': _model.tituloController.text,
                               'descricao': _model.descricaoController.text,
-                              'img': _model.uploadedFileUrl,
+                              'img': widget.img,
                               'categoria': _model.categoriaController.text,
                               'copypage': _model.codpagController.text,
                             },

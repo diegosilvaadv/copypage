@@ -1,4 +1,5 @@
 import '/backend/supabase/supabase.dart';
+import '/components/alterarimg_widget.dart';
 import '/components/editar_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';

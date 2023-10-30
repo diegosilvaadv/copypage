@@ -2,7 +2,6 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,7 +16,6 @@ class EditarWidget extends StatefulWidget {
     required this.descricao,
     required this.categoria,
     required this.codpag,
-    required this.img,
     required this.id,
   }) : super(key: key);
 
@@ -25,7 +23,6 @@ class EditarWidget extends StatefulWidget {
   final String? descricao;
   final String? categoria;
   final String? codpag;
-  final String? img;
   final int? id;
 
   @override
@@ -107,66 +104,6 @@ class _EditarWidgetState extends State<EditarWidget> {
                         ),
                       ],
                     ),
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          final selectedFiles = await selectFiles(
-                            storageFolderPath: 'fotos',
-                            multiFile: false,
-                          );
-                          if (selectedFiles != null) {
-                            setState(() => _model.isDataUploading = true);
-                            var selectedUploadedFiles = <FFUploadedFile>[];
-
-                            var downloadUrls = <String>[];
-                            try {
-                              selectedUploadedFiles = selectedFiles
-                                  .map((m) => FFUploadedFile(
-                                        name: m.storagePath.split('/').last,
-                                        bytes: m.bytes,
-                                      ))
-                                  .toList();
-
-                              downloadUrls = await uploadSupabaseStorageFiles(
-                                bucketName: 'templates',
-                                selectedFiles: selectedFiles,
-                              );
-                            } finally {
-                              _model.isDataUploading = false;
-                            }
-                            if (selectedUploadedFiles.length ==
-                                    selectedFiles.length &&
-                                downloadUrls.length == selectedFiles.length) {
-                              setState(() {
-                                _model.uploadedLocalFile =
-                                    selectedUploadedFiles.first;
-                                _model.uploadedFileUrl = downloadUrls.first;
-                              });
-                            } else {
-                              setState(() {});
-                              return;
-                            }
-                          }
-                        },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: Image.network(
-                            widget.img!,
-                            width: 300.0,
-                            height: 200.0,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ],
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(
@@ -424,7 +361,6 @@ class _EditarWidgetState extends State<EditarWidget> {
                             data: {
                               'titulo': _model.tituloController.text,
                               'descricao': _model.descricaoController.text,
-                              'img': widget.img,
                               'categoria': _model.categoriaController.text,
                               'copypage': _model.codpagController.text,
                             },

@@ -1,4 +1,5 @@
 import '/backend/supabase/supabase.dart';
+import '/components/alterarimg_widget.dart';
 import '/components/editar_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
@@ -551,21 +552,73 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       children: [
-                                                        ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                          child: Image.network(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              listViewTemplatesRow
-                                                                  .img,
-                                                              'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages%20(4).png',
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await showModalBottomSheet(
+                                                              isScrollControlled:
+                                                                  true,
+                                                              backgroundColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              enableDrag: false,
+                                                              context: context,
+                                                              builder:
+                                                                  (context) {
+                                                                return GestureDetector(
+                                                                  onTap: () => _model
+                                                                          .unfocusNode
+                                                                          .canRequestFocus
+                                                                      ? FocusScope.of(
+                                                                              context)
+                                                                          .requestFocus(_model
+                                                                              .unfocusNode)
+                                                                      : FocusScope.of(
+                                                                              context)
+                                                                          .unfocus(),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: MediaQuery
+                                                                        .viewInsetsOf(
+                                                                            context),
+                                                                    child:
+                                                                        AlterarimgWidget(
+                                                                      img: listViewTemplatesRow
+                                                                          .img!,
+                                                                      id: listViewTemplatesRow
+                                                                          .id,
+                                                                    ),
+                                                                  ),
+                                                                );
+                                                              },
+                                                            ).then((value) =>
+                                                                safeSetState(
+                                                                    () {}));
+                                                          },
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                            child:
+                                                                Image.network(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                listViewTemplatesRow
+                                                                    .img,
+                                                                'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages%20(4).png',
+                                                              ),
+                                                              width: 100.0,
+                                                              height: 100.0,
+                                                              fit: BoxFit.cover,
                                                             ),
-                                                            width: 100.0,
-                                                            height: 100.0,
-                                                            fit: BoxFit.cover,
                                                           ),
                                                         ),
                                                         Expanded(
@@ -702,7 +755,6 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                 descricao: listViewTemplatesRow.descricao!,
                                                                                 categoria: listViewTemplatesRow.categoria!,
                                                                                 codpag: listViewTemplatesRow.copypage!,
-                                                                                img: listViewTemplatesRow.img!,
                                                                                 id: listViewTemplatesRow.id,
                                                                               ),
                                                                             ),

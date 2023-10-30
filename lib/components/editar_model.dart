@@ -2,7 +2,6 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/upload_data.dart';
 import 'editar_widget.dart' show EditarWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,11 +10,6 @@ import 'package:provider/provider.dart';
 
 class EditarModel extends FlutterFlowModel<EditarWidget> {
   ///  State fields for stateful widgets in this component.
-
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
 
   // State field(s) for titulo widget.
   FocusNode? tituloFocusNode;

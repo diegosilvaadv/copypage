@@ -42,6 +42,10 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
       return 'Compo Obrigatório';
     }
 
+    if (val.length < 2) {
+      return 'Requires at least 2 characters.';
+    }
+
     return null;
   }
 

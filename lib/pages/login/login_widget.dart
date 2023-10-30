@@ -1188,7 +1188,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                             context.pushNamedAuth(
                                                 'HomePage', context.mounted);
                                           },
-                                          text: 'Entrar',
+                                          text: 'Criar Conta',
                                           options: FFButtonOptions(
                                             width: 230.0,
                                             height: 52.0,

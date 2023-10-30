@@ -1,4 +1,5 @@
 import '/backend/supabase/supabase.dart';
+import '/components/add_widget.dart';
 import '/components/alterarimg_widget.dart';
 import '/components/editar_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -285,8 +286,27 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 size: 24.0,
                               ),
-                              onPressed: () {
-                                print('IconButton pressed ...');
+                              onPressed: () async {
+                                await showModalBottomSheet(
+                                  isScrollControlled: true,
+                                  backgroundColor: Colors.transparent,
+                                  enableDrag: false,
+                                  context: context,
+                                  builder: (context) {
+                                    return GestureDetector(
+                                      onTap: () => _model
+                                              .unfocusNode.canRequestFocus
+                                          ? FocusScope.of(context)
+                                              .requestFocus(_model.unfocusNode)
+                                          : FocusScope.of(context).unfocus(),
+                                      child: Padding(
+                                        padding:
+                                            MediaQuery.viewInsetsOf(context),
+                                        child: AddWidget(),
+                                      ),
+                                    );
+                                  },
+                                ).then((value) => safeSetState(() {}));
                               },
                             ),
                           ),

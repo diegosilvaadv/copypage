@@ -82,58 +82,67 @@ class _AlterarimgWidgetState extends State<AlterarimgWidget> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  final selectedFiles = await selectFiles(
-                    storageFolderPath: 'fotos',
-                    multiFile: false,
-                  );
-                  if (selectedFiles != null) {
-                    setState(() => _model.isDataUploading = true);
-                    var selectedUploadedFiles = <FFUploadedFile>[];
+              Container(
+                width: MediaQuery.sizeOf(context).width * 0.5,
+                height: MediaQuery.sizeOf(context).height * 0.5,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                ),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    final selectedFiles = await selectFiles(
+                      storageFolderPath: 'fotos',
+                      multiFile: false,
+                    );
+                    if (selectedFiles != null) {
+                      setState(() => _model.isDataUploading = true);
+                      var selectedUploadedFiles = <FFUploadedFile>[];
 
-                    var downloadUrls = <String>[];
-                    try {
-                      selectedUploadedFiles = selectedFiles
-                          .map((m) => FFUploadedFile(
-                                name: m.storagePath.split('/').last,
-                                bytes: m.bytes,
-                              ))
-                          .toList();
+                      var downloadUrls = <String>[];
+                      try {
+                        selectedUploadedFiles = selectedFiles
+                            .map((m) => FFUploadedFile(
+                                  name: m.storagePath.split('/').last,
+                                  bytes: m.bytes,
+                                ))
+                            .toList();
 
-                      downloadUrls = await uploadSupabaseStorageFiles(
-                        bucketName: 'templates',
-                        selectedFiles: selectedFiles,
-                      );
-                    } finally {
-                      _model.isDataUploading = false;
+                        downloadUrls = await uploadSupabaseStorageFiles(
+                          bucketName: 'templates',
+                          selectedFiles: selectedFiles,
+                        );
+                      } finally {
+                        _model.isDataUploading = false;
+                      }
+                      if (selectedUploadedFiles.length ==
+                              selectedFiles.length &&
+                          downloadUrls.length == selectedFiles.length) {
+                        setState(() {
+                          _model.uploadedLocalFile =
+                              selectedUploadedFiles.first;
+                          _model.uploadedFileUrl = downloadUrls.first;
+                        });
+                      } else {
+                        setState(() {});
+                        return;
+                      }
                     }
-                    if (selectedUploadedFiles.length == selectedFiles.length &&
-                        downloadUrls.length == selectedFiles.length) {
-                      setState(() {
-                        _model.uploadedLocalFile = selectedUploadedFiles.first;
-                        _model.uploadedFileUrl = downloadUrls.first;
-                      });
-                    } else {
-                      setState(() {});
-                      return;
-                    }
-                  }
-                },
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
-                  child: Image.network(
-                    valueOrDefault<String>(
-                      _model.uploadedFileUrl,
-                      'https://abravidro.org.br/wp-content/uploads/2015/04/sem-imagem7.jpg',
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.network(
+                      valueOrDefault<String>(
+                        _model.uploadedFileUrl,
+                        'https://abravidro.org.br/wp-content/uploads/2015/04/sem-imagem7.jpg',
+                      ),
+                      width: 1200.0,
+                      height: 900.0,
+                      fit: BoxFit.cover,
                     ),
-                    width: 1200.0,
-                    height: 900.0,
-                    fit: BoxFit.cover,
                   ),
                 ),
               ),

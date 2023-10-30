@@ -420,11 +420,11 @@ class _EditarWidgetState extends State<EditarWidget> {
                         onPressed: () async {
                           await TemplatesTable().update(
                             data: {
-                              'titulo': widget.titulo,
-                              'descricao': widget.descricao,
-                              'img': widget.img,
-                              'categoria': widget.categoria,
-                              'copypage': widget.codpag,
+                              'titulo': _model.tituloController.text,
+                              'descricao': _model.descricaoController.text,
+                              'img': _model.uploadedFileUrl,
+                              'categoria': _model.categoriaController.text,
+                              'copypage': _model.codpagController.text,
                             },
                             matchingRows: (rows) => rows,
                           );

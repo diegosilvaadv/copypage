@@ -149,13 +149,14 @@ class _AlterarimgWidgetState extends State<AlterarimgWidget> {
                   onPressed: () async {
                     await TemplatesTable().update(
                       data: {
-                        'img': widget.img,
+                        'img': _model.uploadedFileUrl,
                       },
                       matchingRows: (rows) => rows.eq(
                         'id',
                         widget.id,
                       ),
                     );
+                    Navigator.pop(context);
                   },
                   text: 'ALTERAR',
                   options: FFButtonOptions(

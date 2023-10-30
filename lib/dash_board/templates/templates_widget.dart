@@ -1,4 +1,5 @@
 import '/backend/supabase/supabase.dart';
+import '/components/editar_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -672,9 +673,44 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                 child:
                                                                     FFButtonWidget(
                                                                   onPressed:
-                                                                      () {
-                                                                    print(
-                                                                        'Button pressed ...');
+                                                                      () async {
+                                                                    await showModalBottomSheet(
+                                                                      isScrollControlled:
+                                                                          true,
+                                                                      backgroundColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      enableDrag:
+                                                                          false,
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (context) {
+                                                                        return GestureDetector(
+                                                                          onTap: () => _model.unfocusNode.canRequestFocus
+                                                                              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+                                                                              : FocusScope.of(context).unfocus(),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                MediaQuery.viewInsetsOf(context),
+                                                                            child:
+                                                                                Container(
+                                                                              height: 750.0,
+                                                                              child: EditarWidget(
+                                                                                titulo: listViewTemplatesRow.titulo!,
+                                                                                descricao: listViewTemplatesRow.descricao!,
+                                                                                categoria: listViewTemplatesRow.categoria!,
+                                                                                codpag: listViewTemplatesRow.copypage!,
+                                                                                img: listViewTemplatesRow.img!,
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        );
+                                                                      },
+                                                                    ).then((value) =>
+                                                                        safeSetState(
+                                                                            () {}));
                                                                   },
                                                                   text:
                                                                       'EDITAR',

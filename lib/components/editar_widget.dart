@@ -1,5 +1,8 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,7 +11,20 @@ import 'editar_model.dart';
 export 'editar_model.dart';
 
 class EditarWidget extends StatefulWidget {
-  const EditarWidget({Key? key}) : super(key: key);
+  const EditarWidget({
+    Key? key,
+    required this.titulo,
+    required this.descricao,
+    required this.categoria,
+    required this.codpag,
+    required this.img,
+  }) : super(key: key);
+
+  final String? titulo;
+  final String? descricao;
+  final String? categoria;
+  final String? codpag;
+  final String? img;
 
   @override
   _EditarWidgetState createState() => _EditarWidgetState();
@@ -28,12 +44,16 @@ class _EditarWidgetState extends State<EditarWidget> {
     super.initState();
     _model = createModel(context, () => EditarModel());
 
-    _model.tituloController ??= TextEditingController();
+    _model.tituloController ??= TextEditingController(text: widget.titulo);
     _model.tituloFocusNode ??= FocusNode();
-    _model.descricaoController ??= TextEditingController();
+    _model.descricaoController ??=
+        TextEditingController(text: widget.descricao);
     _model.descricaoFocusNode ??= FocusNode();
-    _model.categoriaController ??= TextEditingController();
+    _model.categoriaController ??=
+        TextEditingController(text: widget.categoria);
     _model.categoriaFocusNode ??= FocusNode();
+    _model.codpagController ??= TextEditingController(text: widget.codpag);
+    _model.codpagFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -62,17 +82,86 @@ class _EditarWidgetState extends State<EditarWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            Navigator.pop(context);
+                          },
+                          child: Icon(
+                            Icons.close_sharp,
+                            color: Color(0xFFFF0004),
+                            size: 40.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          'https://picsum.photos/seed/743/600',
-                          width: 300.0,
-                          height: 200.0,
-                          fit: BoxFit.cover,
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          final selectedFiles = await selectFiles(
+                            storageFolderPath: 'fotos',
+                            multiFile: false,
+                          );
+                          if (selectedFiles != null) {
+                            setState(() => _model.isDataUploading = true);
+                            var selectedUploadedFiles = <FFUploadedFile>[];
+
+                            var downloadUrls = <String>[];
+                            try {
+                              selectedUploadedFiles = selectedFiles
+                                  .map((m) => FFUploadedFile(
+                                        name: m.storagePath.split('/').last,
+                                        bytes: m.bytes,
+                                      ))
+                                  .toList();
+
+                              downloadUrls = await uploadSupabaseStorageFiles(
+                                bucketName: 'templates',
+                                selectedFiles: selectedFiles,
+                              );
+                            } finally {
+                              _model.isDataUploading = false;
+                            }
+                            if (selectedUploadedFiles.length ==
+                                    selectedFiles.length &&
+                                downloadUrls.length == selectedFiles.length) {
+                              setState(() {
+                                _model.uploadedLocalFile =
+                                    selectedUploadedFiles.first;
+                                _model.uploadedFileUrl = downloadUrls.first;
+                              });
+                            } else {
+                              setState(() {});
+                              return;
+                            }
+                          }
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.network(
+                            widget.img!,
+                            width: 300.0,
+                            height: 200.0,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ],
@@ -260,6 +349,109 @@ class _EditarWidgetState extends State<EditarWidget> {
                         ),
                       ],
                     ),
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(
+                        150.0, 10.0, 150.0, 10.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                8.0, 0.0, 8.0, 0.0),
+                            child: TextFormField(
+                              controller: _model.codpagController,
+                              focusNode: _model.codpagFocusNode,
+                              autofocus: true,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                labelText: 'codpag',
+                                labelStyle:
+                                    FlutterFlowTheme.of(context).labelMedium,
+                                hintStyle:
+                                    FlutterFlowTheme.of(context).labelMedium,
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).error,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).error,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                              ),
+                              style: FlutterFlowTheme.of(context).bodyMedium,
+                              maxLines: 5,
+                              validator: _model.codpagControllerValidator
+                                  .asValidator(context),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      FFButtonWidget(
+                        onPressed: () async {
+                          await TemplatesTable().update(
+                            data: {
+                              'titulo': widget.titulo,
+                              'descricao': widget.descricao,
+                              'img': widget.img,
+                              'categoria': widget.categoria,
+                              'copypage': widget.codpag,
+                            },
+                            matchingRows: (rows) => rows,
+                          );
+                          Navigator.pop(context);
+                        },
+                        text: 'Salvar Alterações',
+                        options: FFButtonOptions(
+                          height: 40.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.white,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

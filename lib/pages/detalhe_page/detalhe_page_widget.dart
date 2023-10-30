@@ -324,6 +324,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                   ),
                               elevation: 0.0,
                               borderSide: BorderSide(
+                                color: Colors.transparent,
                                 width: 0.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),

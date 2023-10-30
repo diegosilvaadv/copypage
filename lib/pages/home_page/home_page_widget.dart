@@ -192,9 +192,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       fontSize: 20.0,
                                       fontWeight: FontWeight.bold,
                                     ),
-                                elevation: 0.0,
                                 borderSide: BorderSide(
-                                  color: Colors.transparent,
+                                  color: Color(0x3439D2C0),
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),

@@ -62,6 +62,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             copypage: params.getParam('copypage', ParamType.String),
             data: params.getParam('data', ParamType.DateTime),
           ),
+        ),
+        FFRoute(
+          name: 'Tutorial',
+          path: '/tutorial',
+          builder: (context, params) => TutorialWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

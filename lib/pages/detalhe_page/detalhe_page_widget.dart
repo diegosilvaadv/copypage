@@ -812,7 +812,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                             } else {
                               await showModalBottomSheet(
                                 isScrollControlled: true,
-                                backgroundColor: Colors.transparent,
+                                backgroundColor: Color(0x7A14181B),
                                 enableDrag: false,
                                 context: context,
                                 builder: (context) {

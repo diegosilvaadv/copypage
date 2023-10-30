@@ -219,8 +219,16 @@ class _ContatoWidgetState extends State<ContatoWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                context.pushNamed(
+                                  'Tutorial',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                    ),
+                                  },
+                                );
                               },
                               text: 'TUTORIAL',
                               options: FFButtonOptions(
@@ -259,8 +267,8 @@ class _ContatoWidgetState extends State<ContatoWidget>
                             ),
                           ),
                           FFButtonWidget(
-                            onPressed: () async {
-                              context.pushNamed('contato');
+                            onPressed: () {
+                              print('Button pressed ...');
                             },
                             text: 'CONTATO',
                             options: FFButtonOptions(

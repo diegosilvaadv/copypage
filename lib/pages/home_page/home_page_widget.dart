@@ -1102,7 +1102,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            'Copie components prontos direto para seu projeto.',
+                            'Copie telas de login para usar como quiser.',
                             style: FlutterFlowTheme.of(context)
                                 .labelLarge
                                 .override(

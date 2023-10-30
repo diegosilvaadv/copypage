@@ -182,10 +182,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         : FocusScope.of(context).unfocus(),
                                     child: Padding(
                                       padding: MediaQuery.viewInsetsOf(context),
-                                      child: Container(
-                                        height: 750.0,
-                                        child: SenhaadmWidget(),
-                                      ),
+                                      child: SenhaadmWidget(),
                                     ),
                                   );
                                 },
@@ -193,7 +190,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             },
                             child: Text(
                               'adm',
-                              style: FlutterFlowTheme.of(context).bodyMedium,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                  ),
                             ),
                           ),
                         ],

@@ -18,6 +18,7 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
   // State field(s) for TabBar widget.
   TabController? tabBarController;
   int get tabBarCurrentIndex =>
@@ -36,6 +37,14 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   FocusNode? nomeFocusNode;
   TextEditingController? nomeController;
   String? Function(BuildContext, String?)? nomeControllerValidator;
+  String? _nomeControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Compo Obrigatório';
+    }
+
+    return null;
+  }
+
   // State field(s) for emailAddress2 widget.
   FocusNode? emailAddress2FocusNode;
   TextEditingController? emailAddress2Controller;
@@ -55,6 +64,7 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   void initState(BuildContext context) {
     passwordVisibility = false;
+    nomeControllerValidator = _nomeControllerValidator;
     password2Visibility = false;
     confpasswordVisibility = false;
   }

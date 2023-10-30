@@ -203,7 +203,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: Color(0x00F1F4F8),
+                                hoverColor: Colors.transparent,
                                 hoverBorderSide: BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,

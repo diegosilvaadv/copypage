@@ -25,6 +25,19 @@ class _TutorialWidgetState extends State<TutorialWidget>
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   final animationsMap = {
+    'rowOnPageLoadAnimation': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        ShakeEffect(
+          curve: Curves.elasticOut,
+          delay: 0.ms,
+          duration: 1000.ms,
+          hz: 1,
+          offset: Offset(1.0, 1.0),
+          rotation: 0.017,
+        ),
+      ],
+    ),
     'buttonOnActionTriggerAnimation1': AnimationInfo(
       trigger: AnimationTrigger.onActionTrigger,
       applyInitialState: true,
@@ -426,7 +439,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                     ),
                   ),
               ],
-            ),
+            ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation']!),
           ),
           actions: [],
           centerTitle: false,

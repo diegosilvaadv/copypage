@@ -198,6 +198,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                       fontSize: 20.0,
                                       fontWeight: FontWeight.bold,
                                     ),
+                                elevation: 0.0,
                                 borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
@@ -211,6 +212,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                 hoverTextColor:
                                     FlutterFlowTheme.of(context).secondary,
                               ),
+                              showLoadingIndicator: false,
                             ).animateOnActionTrigger(
                               animationsMap['buttonOnActionTriggerAnimation1']!,
                             ),
@@ -262,6 +264,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                 hoverTextColor:
                                     FlutterFlowTheme.of(context).secondary,
                               ),
+                              showLoadingIndicator: false,
                             ).animateOnActionTrigger(
                               animationsMap['buttonOnActionTriggerAnimation2']!,
                             ),
@@ -302,6 +305,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                               hoverTextColor:
                                   FlutterFlowTheme.of(context).secondary,
                             ),
+                            showLoadingIndicator: false,
                           ).animateOnActionTrigger(
                             animationsMap['buttonOnActionTriggerAnimation3']!,
                           ),

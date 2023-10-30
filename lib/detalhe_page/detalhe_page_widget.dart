@@ -142,7 +142,9 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-          automaticallyImplyLeading: false,
+          iconTheme:
+              IconThemeData(color: FlutterFlowTheme.of(context).primaryText),
+          automaticallyImplyLeading: true,
           title: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(100.0, 0.0, 100.0, 0.0),
             child: Row(
@@ -219,6 +221,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                       fontSize: 20.0,
                                       fontWeight: FontWeight.bold,
                                     ),
+                                elevation: 0.0,
                                 borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
@@ -232,6 +235,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                 hoverTextColor:
                                     FlutterFlowTheme.of(context).secondary,
                               ),
+                              showLoadingIndicator: false,
                             ).animateOnActionTrigger(
                               animationsMap['buttonOnActionTriggerAnimation1']!,
                             ),
@@ -283,6 +287,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                 hoverTextColor:
                                     FlutterFlowTheme.of(context).secondary,
                               ),
+                              showLoadingIndicator: false,
                             ).animateOnActionTrigger(
                               animationsMap['buttonOnActionTriggerAnimation2']!,
                             ),
@@ -319,7 +324,6 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                   ),
                               elevation: 0.0,
                               borderSide: BorderSide(
-                                color: Color(0x3F39D2C0),
                                 width: 0.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),
@@ -331,6 +335,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                               hoverTextColor:
                                   FlutterFlowTheme.of(context).secondary,
                             ),
+                            showLoadingIndicator: false,
                           ).animateOnActionTrigger(
                             animationsMap['buttonOnActionTriggerAnimation3']!,
                           ),

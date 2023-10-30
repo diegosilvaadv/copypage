@@ -1,10 +1,10 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -74,6 +74,11 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
     super.initState();
     _model = createModel(context, () => TemplatesModel());
 
+    _model.tabBarController = TabController(
+      vsync: this,
+      length: 4,
+      initialIndex: 0,
+    )..addListener(() => setState(() {}));
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -401,306 +406,443 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
           top: true,
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(100.0, 50.0, 100.0, 16.0),
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Todas as Telas',
-                        style: FlutterFlowTheme.of(context).titleLarge.override(
-                              fontFamily: 'Outfit',
-                              fontSize: 30.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
-                            },
-                            text: 'MAIS',
-                            options: FFButtonOptions(
-                              height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context).primary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Readex Pro',
-                                    color: Colors.white,
-                                  ),
-                              elevation: 3.0,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Todas as Telas',
+                      style: FlutterFlowTheme.of(context).titleLarge.override(
+                            fontFamily: 'Outfit',
+                            fontSize: 30.0,
+                            fontWeight: FontWeight.bold,
                           ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 0.0, 0.0),
-                    child: Row(
+                    ),
+                    Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Text(
-                          'Editar Telas',
-                          style:
-                              FlutterFlowTheme.of(context).labelLarge.override(
-                                    fontFamily: 'Readex Pro',
-                                    fontSize: 20.0,
-                                  ),
+                        FFButtonWidget(
+                          onPressed: () {
+                            print('Button pressed ...');
+                          },
+                          text: 'MAIS',
+                          options: FFButtonOptions(
+                            height: 40.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                24.0, 0.0, 24.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  color: Colors.white,
+                                ),
+                            elevation: 3.0,
+                            borderSide: BorderSide(
+                              color: Colors.transparent,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
                         ),
                       ],
                     ),
-                  ),
-                  Flexible(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Container(
-                            width: MediaQuery.sizeOf(context).width * 0.9,
-                            height: 270.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              borderRadius: BorderRadius.circular(8.0),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 0.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        'Editar Telas',
+                        style: FlutterFlowTheme.of(context).labelLarge.override(
+                              fontFamily: 'Readex Pro',
+                              fontSize: 20.0,
                             ),
-                            child: FutureBuilder<List<TemplatesRow>>(
-                              future: TemplatesTable().queryRows(
-                                queryFn: (q) => q,
-                                limit: 10,
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: Alignment(0.0, 0),
+                          child: FlutterFlowButtonTabBar(
+                            useToggleButtonStyle: true,
+                            labelStyle:
+                                FlutterFlowTheme.of(context).titleMedium,
+                            unselectedLabelStyle: TextStyle(),
+                            labelColor:
+                                FlutterFlowTheme.of(context).primaryText,
+                            unselectedLabelColor:
+                                FlutterFlowTheme.of(context).secondaryText,
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).accent1,
+                            unselectedBackgroundColor:
+                                FlutterFlowTheme.of(context).alternate,
+                            borderColor: FlutterFlowTheme.of(context).primary,
+                            unselectedBorderColor:
+                                FlutterFlowTheme.of(context).alternate,
+                            borderWidth: 2.0,
+                            borderRadius: 8.0,
+                            elevation: 0.0,
+                            buttonMargin: EdgeInsetsDirectional.fromSTEB(
+                                8.0, 0.0, 8.0, 0.0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 10.0, 10.0, 10.0),
+                            tabs: [
+                              Tab(
+                                text: 'Todas as Categorias',
                               ),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: CircularProgressIndicator(
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                          FlutterFlowTheme.of(context).primary,
-                                        ),
-                                      ),
+                              Tab(
+                                text: 'Login',
+                              ),
+                              Tab(
+                                text: 'HomePage',
+                              ),
+                              Tab(
+                                text: 'Componente',
+                              ),
+                            ],
+                            controller: _model.tabBarController,
+                          ),
+                        ),
+                        Expanded(
+                          child: TabBarView(
+                            controller: _model.tabBarController,
+                            children: [
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  FutureBuilder<List<TemplatesRow>>(
+                                    future: TemplatesTable().queryRows(
+                                      queryFn: (q) => q.order('created_at'),
                                     ),
-                                  );
-                                }
-                                List<TemplatesRow> listViewTemplatesRowList =
-                                    snapshot.data!;
-                                return ListView.builder(
-                                  padding: EdgeInsets.zero,
-                                  shrinkWrap: true,
-                                  scrollDirection: Axis.horizontal,
-                                  itemCount: listViewTemplatesRowList.length,
-                                  itemBuilder: (context, listViewIndex) {
-                                    final listViewTemplatesRow =
-                                        listViewTemplatesRowList[listViewIndex];
-                                    return Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 10.0, 10.0, 10.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          context.pushNamed(
-                                            'detalhePage',
-                                            queryParameters: {
-                                              'titulo': serializeParam(
-                                                listViewTemplatesRow.titulo,
-                                                ParamType.String,
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
                                               ),
-                                              'descricao': serializeParam(
-                                                listViewTemplatesRow.descricao,
-                                                ParamType.String,
-                                              ),
-                                              'img': serializeParam(
-                                                listViewTemplatesRow.img,
-                                                ParamType.String,
-                                              ),
-                                              'categoria': serializeParam(
-                                                listViewTemplatesRow.categoria,
-                                                ParamType.String,
-                                              ),
-                                              'copypage': serializeParam(
-                                                listViewTemplatesRow.copypage,
-                                                ParamType.String,
-                                              ),
-                                              'data': serializeParam(
-                                                listViewTemplatesRow.createdAt,
-                                                ParamType.DateTime,
-                                              ),
-                                            }.withoutNulls,
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType.fade,
-                                              ),
-                                            },
-                                          );
-                                        },
-                                        child: Container(
-                                          width: 262.0,
-                                          height: 200.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
+                                            ),
                                           ),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: [
-                                              Flexible(
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          8.0, 8.0, 8.0, 8.0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Container(
-                                                        width: 240.0,
-                                                        height: 180.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                          child:
-                                                              CachedNetworkImage(
-                                                            fadeInDuration:
-                                                                Duration(
-                                                                    milliseconds:
-                                                                        500),
-                                                            fadeOutDuration:
-                                                                Duration(
-                                                                    milliseconds:
-                                                                        500),
-                                                            imageUrl:
-                                                                valueOrDefault<
-                                                                    String>(
-                                                              listViewTemplatesRow
-                                                                  .img,
-                                                              'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages%20(1).png',
-                                                            ),
-                                                            width: 240.0,
-                                                            height: 180.0,
-                                                            fit: BoxFit.cover,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        8.0, 0.0, 8.0, 8.0),
-                                                child: Column(
+                                        );
+                                      }
+                                      List<TemplatesRow>
+                                          listViewTemplatesRowList =
+                                          snapshot.data!;
+                                      return ListView.builder(
+                                        padding: EdgeInsets.zero,
+                                        shrinkWrap: true,
+                                        scrollDirection: Axis.vertical,
+                                        itemCount:
+                                            listViewTemplatesRowList.length,
+                                        itemBuilder: (context, listViewIndex) {
+                                          final listViewTemplatesRow =
+                                              listViewTemplatesRowList[
+                                                  listViewIndex];
+                                          return Container(
+                                            width: 100.0,
+                                            height: 119.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                            ),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Expanded(
-                                                          child: Text(
-                                                            listViewTemplatesRow
-                                                                .titulo!,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Readex Pro',
-                                                                  fontSize:
-                                                                      15.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
+                                                    ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                      child: Image.network(
+                                                        listViewTemplatesRow
+                                                            .img!,
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
+                                                      ),
+                                                    ),
+                                                    Expanded(
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    10.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Expanded(
+                                                                  child: Text(
+                                                                    listViewTemplatesRow
+                                                                        .titulo!,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Outfit',
+                                                                          fontSize:
+                                                                              30.0,
+                                                                        ),
+                                                                  ),
                                                                 ),
-                                                          ),
+                                                              ],
+                                                            ),
+                                                            Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Expanded(
+                                                                  child: Text(
+                                                                    listViewTemplatesRow
+                                                                        .descricao!,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Expanded(
+                                                                  child: Text(
+                                                                    listViewTemplatesRow
+                                                                        .categoria!,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondary,
+                                                                          fontSize:
+                                                                              20.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w500,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ],
                                                         ),
-                                                      ],
+                                                      ),
                                                     ),
                                                     Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
+                                                                  10.0,
                                                                   0.0,
-                                                                  8.0,
                                                                   0.0,
                                                                   0.0),
-                                                      child: Row(
+                                                      child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Text(
-                                                            listViewTemplatesRow
-                                                                .categoria!,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium,
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        10.0,
+                                                                        0.0,
+                                                                        10.0,
+                                                                        10.0),
+                                                            child:
+                                                                FFButtonWidget(
+                                                              onPressed: () {
+                                                                print(
+                                                                    'Button pressed ...');
+                                                              },
+                                                              text: 'EDITAR',
+                                                              options:
+                                                                  FFButtonOptions(
+                                                                height: 40.0,
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        24.0,
+                                                                        0.0,
+                                                                        24.0,
+                                                                        0.0),
+                                                                iconPadding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondary,
+                                                                textStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      color: Colors
+                                                                          .white,
+                                                                    ),
+                                                                elevation: 3.0,
+                                                                borderSide:
+                                                                    BorderSide(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  width: 1.0,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        10.0,
+                                                                        0.0,
+                                                                        10.0,
+                                                                        0.0),
+                                                            child:
+                                                                FFButtonWidget(
+                                                              onPressed: () {
+                                                                print(
+                                                                    'Button pressed ...');
+                                                              },
+                                                              text: 'EXCLUIR',
+                                                              options:
+                                                                  FFButtonOptions(
+                                                                height: 40.0,
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        24.0,
+                                                                        0.0,
+                                                                        24.0,
+                                                                        0.0),
+                                                                iconPadding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                color: Color(
+                                                                    0xFFFF0004),
+                                                                textStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      color: Colors
+                                                                          .white,
+                                                                    ),
+                                                                elevation: 3.0,
+                                                                borderSide:
+                                                                    BorderSide(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  width: 1.0,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                              ),
+                                                            ),
                                                           ),
                                                         ],
                                                       ),
                                                     ),
                                                   ],
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                );
-                              },
-                            ),
+                                              ],
+                                            ),
+                                          );
+                                        },
+                                      );
+                                    },
+                                  ),
+                                ],
+                              ),
+                              Text(
+                                'Tab View 2',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      fontSize: 32.0,
+                                    ),
+                              ),
+                              Text(
+                                'Tab View 3',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      fontSize: 32.0,
+                                    ),
+                              ),
+                              Text(
+                                'Tab View 4',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      fontSize: 32.0,
+                                    ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),

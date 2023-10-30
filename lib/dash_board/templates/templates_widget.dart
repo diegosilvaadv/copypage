@@ -530,7 +530,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                     0.0, 0.0, 0.0, 10.0),
                                             child: Container(
                                               width: 100.0,
-                                              height: 119.0,
+                                              height: 208.0,
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -615,8 +615,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                     .img,
                                                                 'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/design%20templates%20copypages%20(4).png',
                                                               ),
-                                                              width: 100.0,
-                                                              height: 100.0,
+                                                              width: 240.0,
+                                                              height: 180.0,
                                                               fit: BoxFit.cover,
                                                             ),
                                                           ),
@@ -638,25 +638,33 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                   CrossAxisAlignment
                                                                       .start,
                                                               children: [
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Expanded(
-                                                                      child:
-                                                                          Text(
-                                                                        listViewTemplatesRow
-                                                                            .titulo!,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .headlineSmall
-                                                                            .override(
-                                                                              fontFamily: 'Outfit',
-                                                                              fontSize: 30.0,
-                                                                            ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          8.0),
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    children: [
+                                                                      Expanded(
+                                                                        child:
+                                                                            Text(
+                                                                          listViewTemplatesRow
+                                                                              .titulo!,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .headlineSmall
+                                                                              .override(
+                                                                                fontFamily: 'Outfit',
+                                                                                fontSize: 30.0,
+                                                                              ),
+                                                                        ),
                                                                       ),
-                                                                    ),
-                                                                  ],
+                                                                    ],
+                                                                  ),
                                                                 ),
                                                                 Row(
                                                                   mainAxisSize:
@@ -665,11 +673,19 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                   children: [
                                                                     Expanded(
                                                                       child:
-                                                                          Text(
-                                                                        listViewTemplatesRow
-                                                                            .descricao!,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            8.0),
+                                                                        child:
+                                                                            Text(
+                                                                          listViewTemplatesRow
+                                                                              .descricao!,
+                                                                          style:
+                                                                              FlutterFlowTheme.of(context).bodyMedium,
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   ],

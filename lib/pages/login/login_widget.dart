@@ -1194,6 +1194,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                               'email': _model
                                                   .emailAddress2Controller.text,
                                               'id': currentUserUid,
+                                              'adm': false,
                                             });
 
                                             context.pushNamedAuth(

@@ -684,6 +684,10 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                             );
                           },
                           text: 'Copiar Código da Página',
+                          icon: Icon(
+                            Icons.content_copy,
+                            size: 15.0,
+                          ),
                           options: FFButtonOptions(
                             height: 40.0,
                             padding: EdgeInsetsDirectional.fromSTEB(

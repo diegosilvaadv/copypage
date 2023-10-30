@@ -711,6 +711,15 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                           ),
                           showLoadingIndicator: false,
                         ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 100.0, 0.0),

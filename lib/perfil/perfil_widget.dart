@@ -1,5 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/add_widget.dart';
 import '/components/alterarimg_widget.dart';
 import '/components/editar_widget.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
@@ -68,6 +69,34 @@ class _PerfilWidgetState extends State<PerfilWidget>
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryText,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () async {
+            await showModalBottomSheet(
+              isScrollControlled: true,
+              backgroundColor: Colors.transparent,
+              enableDrag: false,
+              context: context,
+              builder: (context) {
+                return GestureDetector(
+                  onTap: () => _model.unfocusNode.canRequestFocus
+                      ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+                      : FocusScope.of(context).unfocus(),
+                  child: Padding(
+                    padding: MediaQuery.viewInsetsOf(context),
+                    child: AddWidget(),
+                  ),
+                );
+              },
+            ).then((value) => safeSetState(() {}));
+          },
+          backgroundColor: FlutterFlowTheme.of(context).secondary,
+          elevation: 8.0,
+          child: Icon(
+            Icons.add,
+            color: FlutterFlowTheme.of(context).info,
+            size: 24.0,
+          ),
+        ),
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primaryText,
           automaticallyImplyLeading: false,

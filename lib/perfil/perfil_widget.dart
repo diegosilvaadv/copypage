@@ -211,6 +211,33 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                         }
                                       }
 
+                                      await UsersTable().update(
+                                        data: {
+                                          'imgPerfil': _model.uploadedFileUrl,
+                                        },
+                                        matchingRows: (rows) => rows.eq(
+                                          'id',
+                                          currentUserUid,
+                                        ),
+                                      );
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            'Foto Atualizada com Sucesso!',
+                                            style: TextStyle(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                            ),
+                                          ),
+                                          duration:
+                                              Duration(milliseconds: 4000),
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondary,
+                                        ),
+                                      );
                                       setState(
                                           () => _model.requestCompleter = null);
                                       await _model.waitForRequestCompleted();

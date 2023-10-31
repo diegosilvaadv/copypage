@@ -406,8 +406,12 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                       List<TemplatesRow>>(
                                                     future: TemplatesTable()
                                                         .queryRows(
-                                                      queryFn: (q) =>
-                                                          q.order('created_at'),
+                                                      queryFn: (q) => q
+                                                          .eq(
+                                                            'user',
+                                                            currentUserUid,
+                                                          )
+                                                          .order('created_at'),
                                                     ),
                                                     builder:
                                                         (context, snapshot) {

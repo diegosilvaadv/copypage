@@ -776,6 +776,10 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                           'categoria',
                                                           'authentication',
                                                         )
+                                                        .eq(
+                                                          'user',
+                                                          currentUserUid,
+                                                        )
                                                         .order('created_at'),
                                                   ),
                                                   builder: (context, snapshot) {
@@ -1120,6 +1124,10 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                         .eq(
                                                           'categoria',
                                                           'homepage',
+                                                        )
+                                                        .eq(
+                                                          'user',
+                                                          currentUserUid,
                                                         )
                                                         .order('created_at'),
                                                   ),
@@ -1466,6 +1474,10 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                           'categoria',
                                                           'componentes',
                                                         )
+                                                        .eq(
+                                                          'user',
+                                                          currentUserUid,
+                                                        )
                                                         .order('created_at'),
                                                   ),
                                                   builder: (context, snapshot) {
@@ -1810,6 +1822,10 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                         .eq(
                                                           'categoria',
                                                           'dashboard',
+                                                        )
+                                                        .eq(
+                                                          'user',
+                                                          currentUserUid,
                                                         )
                                                         .order('created_at'),
                                                   ),

@@ -358,59 +358,64 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     'buttonOnActionTriggerAnimation2']!,
                               ),
                             ),
-                            FFButtonWidget(
-                              onPressed: () async {
-                                context.pushNamed(
-                                  'contato',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType: PageTransitionType.fade,
-                                    ),
-                                  },
-                                );
-                              },
-                              text: 'CONTATO',
-                              options: FFButtonOptions(
-                                height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 10.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Rubik',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                elevation: 0.0,
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 0.0,
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 5.0, 0.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed(
+                                    'contato',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                      ),
+                                    },
+                                  );
+                                },
+                                text: 'CONTATO',
+                                options: FFButtonOptions(
+                                  height: 40.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 10.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Rubik',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                  elevation: 0.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 0.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  hoverColor: Color(0x00F1F4F8),
+                                  hoverBorderSide: BorderSide(
+                                    color: Color(0x00F1F4F8),
+                                    width: 0.0,
+                                  ),
+                                  hoverTextColor:
+                                      FlutterFlowTheme.of(context).secondary,
                                 ),
-                                borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: Color(0x00F1F4F8),
-                                hoverBorderSide: BorderSide(
-                                  color: Color(0x00F1F4F8),
-                                  width: 0.0,
-                                ),
-                                hoverTextColor:
-                                    FlutterFlowTheme.of(context).secondary,
+                                showLoadingIndicator: false,
+                              ).animateOnActionTrigger(
+                                animationsMap[
+                                    'buttonOnActionTriggerAnimation3']!,
                               ),
-                              showLoadingIndicator: false,
-                            ).animateOnActionTrigger(
-                              animationsMap['buttonOnActionTriggerAnimation3']!,
                             ),
                             if (currentUserEmailVerified)
                               FFButtonWidget(
                                 onPressed: () async {
                                   context.pushNamed(
-                                    'contato',
+                                    'perfil',
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,

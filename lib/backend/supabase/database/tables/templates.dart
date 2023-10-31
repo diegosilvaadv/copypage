@@ -37,4 +37,7 @@ class TemplatesRow extends SupabaseDataRow {
 
   String? get copypage => getField<String>('copypage');
   set copypage(String? value) => setField<String>('copypage', value);
+
+  String? get user => getField<String>('user');
+  set user(String? value) => setField<String>('user', value);
 }

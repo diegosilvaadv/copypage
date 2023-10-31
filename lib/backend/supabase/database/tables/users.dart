@@ -28,4 +28,7 @@ class UsersRow extends SupabaseDataRow {
 
   bool? get adm => getField<bool>('adm');
   set adm(bool? value) => setField<bool>('adm', value);
+
+  String? get imgPerfil => getField<String>('imgPerfil');
+  set imgPerfil(String? value) => setField<String>('imgPerfil', value);
 }

@@ -3,6 +3,7 @@ import '/backend/supabase/supabase.dart';
 import '/components/add_widget.dart';
 import '/components/alterarimg_widget.dart';
 import '/components/editar_widget.dart';
+import '/components/editarnome_widget.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -68,18 +69,19 @@ class _PerfilWidgetState extends State<PerfilWidget>
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryText,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryText,
+          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
+            fillColor: FlutterFlowTheme.of(context).primaryBackground,
             icon: Icon(
               Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).secondaryBackground,
+              color: FlutterFlowTheme.of(context).primaryText,
               size: 30.0,
             ),
             onPressed: () async {
@@ -267,15 +269,43 @@ class _PerfilWidgetState extends State<PerfilWidget>
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                    child: Text(
-                      columnUsersRow!.nome!,
-                      textAlign: TextAlign.center,
-                      style:
-                          FlutterFlowTheme.of(context).headlineSmall.override(
-                                fontFamily: 'Outfit',
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                    child: InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        await showModalBottomSheet(
+                          isScrollControlled: true,
+                          backgroundColor: Colors.transparent,
+                          enableDrag: false,
+                          context: context,
+                          builder: (context) {
+                            return GestureDetector(
+                              onTap: () => _model.unfocusNode.canRequestFocus
+                                  ? FocusScope.of(context)
+                                      .requestFocus(_model.unfocusNode)
+                                  : FocusScope.of(context).unfocus(),
+                              child: Padding(
+                                padding: MediaQuery.viewInsetsOf(context),
+                                child: EditarnomeWidget(
+                                  nome: columnUsersRow!.nome!,
+                                ),
                               ),
+                            );
+                          },
+                        ).then((value) => safeSetState(() {}));
+                      },
+                      child: Text(
+                        columnUsersRow!.nome!,
+                        textAlign: TextAlign.center,
+                        style: FlutterFlowTheme.of(context)
+                            .headlineSmall
+                            .override(
+                              fontFamily: 'Outfit',
+                              color: FlutterFlowTheme.of(context).primaryText,
+                            ),
+                      ),
                     ),
                   ),
                   Padding(
@@ -361,8 +391,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                           width: double.infinity,
                           height: 400.0,
                           decoration: BoxDecoration(
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
                             boxShadow: [
                               BoxShadow(
                                 blurRadius: 3.0,

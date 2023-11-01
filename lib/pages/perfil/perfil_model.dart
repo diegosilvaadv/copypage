@@ -3,6 +3,7 @@ import '/backend/supabase/supabase.dart';
 import '/components/add_widget.dart';
 import '/components/alterarimg_widget.dart';
 import '/components/editar_widget.dart';
+import '/components/editarnome_widget.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';

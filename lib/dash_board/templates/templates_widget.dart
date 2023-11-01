@@ -127,7 +127,10 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
             padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: FutureBuilder<List<UsersRow>>(
               future: UsersTable().querySingleRow(
-                queryFn: (q) => q,
+                queryFn: (q) => q.eq(
+                  'id',
+                  currentUserUid,
+                ),
               ),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
@@ -188,11 +191,10 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                         ],
                       ),
                     ),
-                    if ((rowUsersRow?.adm ?? true) &&
-                        responsiveVisibility(
-                          context: context,
-                          phone: false,
-                        ))
+                    if (responsiveVisibility(
+                      context: context,
+                      phone: false,
+                    ))
                       Flexible(
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,

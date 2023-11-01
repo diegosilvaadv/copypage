@@ -4,6 +4,7 @@ import '/components/add_widget.dart';
 import '/components/alterarimg_widget.dart';
 import '/components/editar_widget.dart';
 import '/components/editarnome_widget.dart';
+import '/components/entraremcontato_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -910,10 +911,29 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                             ),
-                          if (columnUsersRow?.produtores == true)
+                          if (columnUsersRow?.produtores == false)
                             FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                await showModalBottomSheet(
+                                  isScrollControlled: true,
+                                  backgroundColor: Color(0xAB1D2428),
+                                  enableDrag: false,
+                                  context: context,
+                                  builder: (context) {
+                                    return GestureDetector(
+                                      onTap: () => _model
+                                              .unfocusNode.canRequestFocus
+                                          ? FocusScope.of(context)
+                                              .requestFocus(_model.unfocusNode)
+                                          : FocusScope.of(context).unfocus(),
+                                      child: Padding(
+                                        padding:
+                                            MediaQuery.viewInsetsOf(context),
+                                        child: EntraremcontatoWidget(),
+                                      ),
+                                    );
+                                  },
+                                ).then((value) => safeSetState(() {}));
                               },
                               text: 'Quero Trabalhar como Produtor',
                               options: FFButtonOptions(

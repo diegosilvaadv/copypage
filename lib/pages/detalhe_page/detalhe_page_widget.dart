@@ -27,6 +27,7 @@ class DetalhePageWidget extends StatefulWidget {
     required this.categoria,
     required this.copypage,
     required this.data,
+    required this.criador,
   }) : super(key: key);
 
   final String? titulo;
@@ -35,6 +36,7 @@ class DetalhePageWidget extends StatefulWidget {
   final String? categoria;
   final String? copypage;
   final DateTime? data;
+  final String? criador;
 
   @override
   _DetalhePageWidgetState createState() => _DetalhePageWidgetState();
@@ -687,6 +689,37 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                   ),
                   Padding(
                     padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Icon(
+                          Icons.person_2,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          size: 24.0,
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              8.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            'criador',
+                            style: FlutterFlowTheme.of(context)
+                                .labelSmall
+                                .override(
+                                  fontFamily: 'Noto Serif',
+                                  color: FlutterFlowTheme.of(context).secondary,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FontStyle.italic,
+                                ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -715,25 +748,37 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                           Duration(milliseconds: 500),
                                       fadeOutDuration:
                                           Duration(milliseconds: 500),
-                                      imageUrl: widget.img!,
+                                      imageUrl: valueOrDefault<String>(
+                                        widget.img,
+                                        'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/logos/istockphoto-1248723171-612x612.jpg',
+                                      ),
                                       fit: BoxFit.contain,
                                     ),
                                     allowRotation: true,
-                                    tag: widget.img!,
+                                    tag: valueOrDefault<String>(
+                                      widget.img,
+                                      'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/logos/istockphoto-1248723171-612x612.jpg',
+                                    ),
                                     useHeroAnimation: true,
                                   ),
                                 ),
                               );
                             },
                             child: Hero(
-                              tag: widget.img!,
+                              tag: valueOrDefault<String>(
+                                widget.img,
+                                'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/logos/istockphoto-1248723171-612x612.jpg',
+                              ),
                               transitionOnUserGestures: true,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(16.0),
                                 child: CachedNetworkImage(
                                   fadeInDuration: Duration(milliseconds: 500),
                                   fadeOutDuration: Duration(milliseconds: 500),
-                                  imageUrl: widget.img!,
+                                  imageUrl: valueOrDefault<String>(
+                                    widget.img,
+                                    'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/logos/istockphoto-1248723171-612x612.jpg',
+                                  ),
                                   width: 1200.0,
                                   height: 900.0,
                                   fit: BoxFit.cover,

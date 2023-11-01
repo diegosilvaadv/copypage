@@ -103,6 +103,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             categoria: params.getParam('categoria', ParamType.String),
             copypage: params.getParam('copypage', ParamType.String),
             data: params.getParam('data', ParamType.DateTime),
+            criador: params.getParam('criador', ParamType.String),
           ),
         ),
         FFRoute(

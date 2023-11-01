@@ -40,4 +40,7 @@ class TemplatesRow extends SupabaseDataRow {
 
   String? get user => getField<String>('user');
   set user(String? value) => setField<String>('user', value);
+
+  String? get criadoPor => getField<String>('criado por');
+  set criadoPor(String? value) => setField<String>('criado por', value);
 }

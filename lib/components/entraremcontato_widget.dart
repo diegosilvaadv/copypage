@@ -55,7 +55,7 @@ class _EntraremcontatoWidgetState extends State<EntraremcontatoWidget> {
                 padding:
                     EdgeInsetsDirectional.fromSTEB(100.0, 100.0, 100.0, 100.0),
                 child: Container(
-                  width: MediaQuery.sizeOf(context).width * 0.6,
+                  width: MediaQuery.sizeOf(context).width * 0.4,
                   height: MediaQuery.sizeOf(context).height * 0.478,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,

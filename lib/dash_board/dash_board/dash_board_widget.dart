@@ -716,15 +716,32 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                                                           setState(() =>
                                                                               _model.checkboxValueMap[listViewUsersRow] = newValue!);
                                                                           if (newValue!) {
-                                                                            await UsersTable().update(
-                                                                              data: {
-                                                                                'produtores': _model.checkboxValueMap[listViewUsersRow],
-                                                                              },
-                                                                              matchingRows: (rows) => rows.eq(
-                                                                                'id',
-                                                                                listViewUsersRow.id,
-                                                                              ),
-                                                                            );
+                                                                            if (_model.checkboxValueMap[listViewUsersRow] ==
+                                                                                false) {
+                                                                              await UsersTable().update(
+                                                                                data: {
+                                                                                  'produtores': _model.checkboxValueMap[listViewUsersRow],
+                                                                                },
+                                                                                matchingRows: (rows) => rows.eq(
+                                                                                  'id',
+                                                                                  listViewUsersRow.id,
+                                                                                ),
+                                                                              );
+                                                                            } else {
+                                                                              ScaffoldMessenger.of(context).showSnackBar(
+                                                                                SnackBar(
+                                                                                  content: Text(
+                                                                                    'erro',
+                                                                                    style: TextStyle(
+                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                    ),
+                                                                                  ),
+                                                                                  duration: Duration(milliseconds: 4000),
+                                                                                  backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                ),
+                                                                              );
+                                                                            }
+
                                                                             setState(() =>
                                                                                 _model.requestCompleter = null);
                                                                             await _model.waitForRequestCompleted();

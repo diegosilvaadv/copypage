@@ -191,10 +191,11 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                         ],
                       ),
                     ),
-                    if (responsiveVisibility(
-                      context: context,
-                      phone: false,
-                    ))
+                    if ((rowUsersRow?.adm ?? true) &&
+                        responsiveVisibility(
+                          context: context,
+                          phone: false,
+                        ))
                       Flexible(
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,

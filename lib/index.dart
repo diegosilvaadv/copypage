@@ -6,4 +6,4 @@ export '/pages/contato/contato_widget.dart' show ContatoWidget;
 export '/dash_board/dash_board/dash_board_widget.dart' show DashBoardWidget;
 export '/dash_board/templates/templates_widget.dart' show TemplatesWidget;
 export '/pages/login/login_widget.dart' show LoginWidget;
-export '/perfil/perfil_widget.dart' show PerfilWidget;
+export '/pages/perfil/perfil_widget.dart' show PerfilWidget;

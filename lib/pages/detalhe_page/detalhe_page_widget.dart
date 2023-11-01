@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -661,6 +662,24 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                   fontWeight: FontWeight.bold,
                                   fontStyle: FontStyle.italic,
                                 ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              10.0, 0.0, 0.0, 0.0),
+                          child: RatingBar.builder(
+                            onRatingUpdate: (newValue) => setState(
+                                () => _model.ratingBarValue = newValue),
+                            itemBuilder: (context, index) => Icon(
+                              Icons.star_rounded,
+                              color: FlutterFlowTheme.of(context).tertiary,
+                            ),
+                            direction: Axis.horizontal,
+                            initialRating: _model.ratingBarValue ??= 4.0,
+                            unratedColor: FlutterFlowTheme.of(context).accent3,
+                            itemCount: 5,
+                            itemSize: 40.0,
+                            glowColor: FlutterFlowTheme.of(context).tertiary,
                           ),
                         ),
                       ],

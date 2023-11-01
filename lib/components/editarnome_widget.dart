@@ -177,7 +177,8 @@ class _EditarnomeWidgetState extends State<EditarnomeWidget> {
                                   currentUserUid,
                                 ),
                               );
-                              Navigator.pop(context);
+
+                              context.pushNamed('perfil');
                             },
                             text: 'MUDAR NOME',
                             options: FFButtonOptions(

@@ -1376,6 +1376,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                               listViewTemplatesRow.id,
                                                                                             ),
                                                                                           );
+                                                                                          setState(() => _model.requestCompleter = null);
+                                                                                          await _model.waitForRequestCompleted();
                                                                                         } else {
                                                                                           return;
                                                                                         }

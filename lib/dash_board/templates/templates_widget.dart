@@ -498,7 +498,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                 return Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    if (columnUsersRow?.adm == true)
+                    if (columnUsersRow?.adm ?? true)
                       Expanded(
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(

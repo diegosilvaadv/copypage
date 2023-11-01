@@ -1,3 +1,4 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -440,6 +441,7 @@ class _AddWidgetState extends State<AddWidget> {
                             'img': _model.uploadedFileUrl,
                             'categoria': _model.categoriaController.text,
                             'copypage': _model.codpagController.text,
+                            'user': currentUserUid,
                           });
                           Navigator.pop(context);
                         },

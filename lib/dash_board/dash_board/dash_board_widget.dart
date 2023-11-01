@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -468,12 +469,14 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
         body: SafeArea(
           top: true,
           child: FutureBuilder<List<UsersRow>>(
-            future: UsersTable().querySingleRow(
-              queryFn: (q) => q.eq(
-                'id',
-                currentUserUid,
-              ),
-            ),
+            future: (_model.requestCompleter ??= Completer<List<UsersRow>>()
+                  ..complete(UsersTable().querySingleRow(
+                    queryFn: (q) => q.eq(
+                      'id',
+                      currentUserUid,
+                    ),
+                  )))
+                .future,
             builder: (context, snapshot) {
               // Customize what your widget looks like when it's loading.
               if (!snapshot.hasData) {
@@ -719,9 +722,12 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                                                               },
                                                                               matchingRows: (rows) => rows.eq(
                                                                                 'id',
-                                                                                templatesUsersRow?.id,
+                                                                                listViewUsersRow.id,
                                                                               ),
                                                                             );
+                                                                            setState(() =>
+                                                                                _model.requestCompleter = null);
+                                                                            await _model.waitForRequestCompleted();
                                                                           }
                                                                         },
                                                                         activeColor:

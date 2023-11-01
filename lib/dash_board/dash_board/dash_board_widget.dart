@@ -712,6 +712,17 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                                                             (newValue) async {
                                                                           setState(() =>
                                                                               _model.checkboxValueMap[listViewUsersRow] = newValue!);
+                                                                          if (newValue!) {
+                                                                            await UsersTable().update(
+                                                                              data: {
+                                                                                'produtores': _model.checkboxValueMap[listViewUsersRow],
+                                                                              },
+                                                                              matchingRows: (rows) => rows.eq(
+                                                                                'id',
+                                                                                templatesUsersRow?.id,
+                                                                              ),
+                                                                            );
+                                                                          }
                                                                         },
                                                                         activeColor:
                                                                             FlutterFlowTheme.of(context).primary,

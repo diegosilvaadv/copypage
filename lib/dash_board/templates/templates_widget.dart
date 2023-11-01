@@ -187,7 +187,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                         ],
                       ),
                     ),
-                    if ((rowUsersRow?.adm == true) &&
+                    if ((rowUsersRow?.adm ?? true) &&
                         responsiveVisibility(
                           context: context,
                           phone: false,

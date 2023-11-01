@@ -51,10 +51,10 @@ class _CriarcontaWidgetState extends State<CriarcontaWidget> {
           children: [
             Container(
               width: MediaQuery.sizeOf(context).width * 0.5,
-              height: MediaQuery.sizeOf(context).height * 0.2,
+              height: MediaQuery.sizeOf(context).height * 0.211,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                borderRadius: BorderRadius.circular(8.0),
+                borderRadius: BorderRadius.circular(16.0),
               ),
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
@@ -62,9 +62,33 @@ class _CriarcontaWidgetState extends State<CriarcontaWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              Navigator.pop(context);
+                            },
+                            child: Icon(
+                              Icons.close,
+                              color: FlutterFlowTheme.of(context).error,
+                              size: 40.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -77,8 +101,7 @@ class _CriarcontaWidgetState extends State<CriarcontaWidget> {
                                     0.0, 0.0, 10.0, 0.0),
                                 child: Icon(
                                   Icons.report_problem_outlined,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
+                                  color: FlutterFlowTheme.of(context).error,
                                   size: 24.0,
                                 ),
                               ),
@@ -89,25 +112,11 @@ class _CriarcontaWidgetState extends State<CriarcontaWidget> {
                             ],
                           ),
                         ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            Navigator.pop(context);
-                          },
-                          child: Icon(
-                            Icons.close,
-                            color: FlutterFlowTheme.of(context).error,
-                            size: 40.0,
-                          ),
-                        ),
                       ],
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -131,12 +140,12 @@ class _CriarcontaWidgetState extends State<CriarcontaWidget> {
                                   24.0, 0.0, 24.0, 0.0),
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: Color(0xFF4B39EF),
+                              color: FlutterFlowTheme.of(context).secondary,
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
                                     fontFamily: 'Readex Pro',
-                                    color: Colors.white,
+                                    color: Colors.black,
                                     fontSize: 25.0,
                                   ),
                               elevation: 3.0,

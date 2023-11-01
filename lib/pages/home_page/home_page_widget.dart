@@ -903,7 +903,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       ),
                                       child: FutureBuilder<List<TemplatesRow>>(
                                         future: TemplatesTable().queryRows(
-                                          queryFn: (q) => q,
+                                          queryFn: (q) => q.order('created_at'),
                                           limit: 10,
                                         ),
                                         builder: (context, snapshot) {

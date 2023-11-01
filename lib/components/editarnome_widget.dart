@@ -178,7 +178,15 @@ class _EditarnomeWidgetState extends State<EditarnomeWidget> {
                                 ),
                               );
 
-                              context.pushNamed('perfil');
+                              context.goNamed(
+                                'perfil',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                  ),
+                                },
+                              );
                             },
                             text: 'MUDAR NOME',
                             options: FFButtonOptions(

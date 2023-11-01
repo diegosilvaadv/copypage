@@ -1,3 +1,4 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/add_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -468,7 +469,10 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
           top: true,
           child: FutureBuilder<List<UsersRow>>(
             future: UsersTable().querySingleRow(
-              queryFn: (q) => q,
+              queryFn: (q) => q.eq(
+                'id',
+                currentUserUid,
+              ),
             ),
             builder: (context, snapshot) {
               // Customize what your widget looks like when it's loading.
@@ -493,7 +497,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    if (templatesUsersRow?.adm == true)
+                    if (templatesUsersRow?.adm ?? true)
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 10.0),

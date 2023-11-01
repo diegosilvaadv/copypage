@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/components/add_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -16,6 +17,11 @@ class DashBoardModel extends FlutterFlowModel<DashBoardWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // State field(s) for Checkbox widget.
+
+  Map<UsersRow, bool> checkboxValueMap = {};
+  List<UsersRow> get checkboxCheckedItems =>
+      checkboxValueMap.entries.where((e) => e.value).map((e) => e.key).toList();
 
   /// Initialization and disposal methods.
 

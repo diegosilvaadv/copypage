@@ -1114,6 +1114,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                               )
                                                               .order(
                                                                   'created_at'),
+                                                          limit: 2,
                                                         ),
                                                         builder: (context,
                                                             snapshot) {

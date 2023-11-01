@@ -799,7 +799,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                       child: Container(
                         width: double.infinity,
-                        height: MediaQuery.sizeOf(context).height * 0.471,
+                        height: MediaQuery.sizeOf(context).height * 0.42,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
@@ -813,7 +813,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 150.0, 0.0),
+                                    0.0, 0.0, 20.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
@@ -897,7 +897,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       height: 270.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
+                                            .secondaryBackground,
                                         borderRadius:
                                             BorderRadius.circular(16.0),
                                       ),
@@ -1007,7 +1007,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
-                                                          .secondaryBackground,
+                                                          .primaryBackground,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               8.0),

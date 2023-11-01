@@ -118,11 +118,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'DashBoard',
           path: '/dashBoard',
+          requireAuth: true,
           builder: (context, params) => DashBoardWidget(),
         ),
         FFRoute(
           name: 'templates',
           path: '/templates',
+          requireAuth: true,
           builder: (context, params) => TemplatesWidget(),
         ),
         FFRoute(

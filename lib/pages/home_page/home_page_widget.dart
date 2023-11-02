@@ -1116,8 +1116,12 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                     Expanded(
                                                                       child:
                                                                           Text(
-                                                                        listViewTemplatesRow
-                                                                            .titulo!,
+                                                                        valueOrDefault<
+                                                                            String>(
+                                                                          listViewTemplatesRow
+                                                                              .titulo,
+                                                                          '...',
+                                                                        ),
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
@@ -1158,8 +1162,12 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                         ),
                                                                       ),
                                                                       Text(
-                                                                        listViewTemplatesRow
-                                                                            .categoria!,
+                                                                        valueOrDefault<
+                                                                            String>(
+                                                                          listViewTemplatesRow
+                                                                              .categoria,
+                                                                          '...',
+                                                                        ),
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium,
                                                                       ),
@@ -1197,8 +1205,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                       Expanded(
                                                                         child:
                                                                             Text(
-                                                                          listViewTemplatesRow
-                                                                              .criadoPor!,
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            listViewTemplatesRow.criadoPor,
+                                                                            'Sem Nome',
+                                                                          ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(

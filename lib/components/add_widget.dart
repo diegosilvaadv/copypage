@@ -288,8 +288,123 @@ class _AddWidgetState extends State<AddWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(
-                        150.0, 10.0, 150.0, 10.0),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(150.0, 10.0, 150.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              10.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            'CATEGORIAS: ',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  fontWeight: FontWeight.bold,
+                                ),
+                          ),
+                        ),
+                        Text(
+                          'dashboard',
+                          style: FlutterFlowTheme.of(context).bodyMedium,
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 20.0, 0.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              await Clipboard.setData(
+                                  ClipboardData(text: 'dashboard'));
+                            },
+                            child: Icon(
+                              Icons.content_copy,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 24.0,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          'homepage',
+                          style: FlutterFlowTheme.of(context).bodyMedium,
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 20.0, 0.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              await Clipboard.setData(
+                                  ClipboardData(text: 'homepage'));
+                            },
+                            child: Icon(
+                              Icons.content_copy,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 24.0,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          'componentes',
+                          style: FlutterFlowTheme.of(context).bodyMedium,
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 20.0, 0.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              await Clipboard.setData(
+                                  ClipboardData(text: 'componentes'));
+                            },
+                            child: Icon(
+                              Icons.content_copy,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 24.0,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          'authentication',
+                          style: FlutterFlowTheme.of(context).bodyMedium,
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 20.0, 0.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              await Clipboard.setData(
+                                  ClipboardData(text: 'authentication'));
+                            },
+                            child: Icon(
+                              Icons.content_copy,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 24.0,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(150.0, 6.0, 150.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,

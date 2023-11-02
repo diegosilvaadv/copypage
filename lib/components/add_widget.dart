@@ -546,46 +546,76 @@ class _AddWidgetState extends State<AddWidget> {
                       ],
                     ),
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      FFButtonWidget(
-                        onPressed: () async {
-                          await TemplatesTable().insert({
-                            'created_at':
-                                supaSerialize<DateTime>(getCurrentTimestamp),
-                            'titulo': _model.tituloController.text,
-                            'descricao': _model.descricaoController.text,
-                            'img': _model.uploadedFileUrl,
-                            'categoria': _model.categoriaController.text,
-                            'copypage': _model.codpagController.text,
-                            'user': currentUserUid,
-                          });
-                          Navigator.pop(context);
-                        },
-                        text: 'Salvar Alterações',
-                        options: FFButtonOptions(
-                          height: 40.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              24.0, 0.0, 24.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).primary,
-                          textStyle:
-                              FlutterFlowTheme.of(context).titleSmall.override(
+                  FutureBuilder<List<UsersRow>>(
+                    future: UsersTable().querySingleRow(
+                      queryFn: (q) => q.eq(
+                        'id',
+                        currentUserUid,
+                      ),
+                    ),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50.0,
+                            height: 50.0,
+                            child: CircularProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                FlutterFlowTheme.of(context).primary,
+                              ),
+                            ),
+                          ),
+                        );
+                      }
+                      List<UsersRow> rowUsersRowList = snapshot.data!;
+                      final rowUsersRow = rowUsersRowList.isNotEmpty
+                          ? rowUsersRowList.first
+                          : null;
+                      return Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          FFButtonWidget(
+                            onPressed: () async {
+                              await TemplatesTable().insert({
+                                'created_at': supaSerialize<DateTime>(
+                                    getCurrentTimestamp),
+                                'titulo': _model.tituloController.text,
+                                'descricao': _model.descricaoController.text,
+                                'img': _model.uploadedFileUrl,
+                                'categoria': _model.categoriaController.text,
+                                'copypage': _model.codpagController.text,
+                                'user': currentUserUid,
+                                'criado por': rowUsersRow?.nome,
+                              });
+                              Navigator.pop(context);
+                            },
+                            text: 'Salvar Alterações',
+                            options: FFButtonOptions(
+                              height: 40.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  24.0, 0.0, 24.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
                                     fontFamily: 'Readex Pro',
                                     color: Colors.white,
                                   ),
-                          elevation: 3.0,
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
-                            width: 1.0,
+                              elevation: 3.0,
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
                           ),
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                      ),
-                    ],
+                        ],
+                      );
+                    },
                   ),
                 ],
               ),

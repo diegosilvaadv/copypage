@@ -591,7 +591,7 @@ class _AddWidgetState extends State<AddWidget> {
                               });
                               Navigator.pop(context);
                             },
-                            text: 'Salvar Alterações',
+                            text: 'Publicar Conteúdo',
                             options: FFButtonOptions(
                               height: 40.0,
                               padding: EdgeInsetsDirectional.fromSTEB(

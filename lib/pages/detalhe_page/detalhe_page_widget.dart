@@ -15,6 +15,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'detalhe_page_model.dart';
 export 'detalhe_page_model.dart';
@@ -865,6 +866,17 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                             if (currentUserEmailVerified) {
                               await Clipboard.setData(
                                   ClipboardData(text: widget.copypage!));
+                              await launchUrl(Uri(
+                                  scheme: 'mailto',
+                                  path: 'diegosilva.adv@yahoo.com',
+                                  query: {
+                                    'subject': _model.textController.text,
+                                    'body': _model.textController.text,
+                                  }
+                                      .entries
+                                      .map((MapEntry<String, String> e) =>
+                                          '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                                      .join('&')));
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   content: Text(

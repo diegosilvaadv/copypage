@@ -808,15 +808,18 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                                         .labelLarge,
                                               ),
                                             ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 10.0, 0.0, 0.0),
-                                              child: SelectionArea(
-                                                  child: Text(
-                                                'DESCONTO50OFF',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          10.0, 10.0, 0.0, 0.0),
+                                                  child: SelectionArea(
+                                                      child: Text(
+                                                    'DESCONTO50OFF',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily:
@@ -825,7 +828,38 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
-                                              )),
+                                                  )),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          6.0, 0.0, 0.0, 0.0),
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      await Clipboard.setData(
+                                                          ClipboardData(
+                                                              text:
+                                                                  'DESCONTO50OFF'));
+                                                    },
+                                                    child: Icon(
+                                                      Icons.content_copy,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      size: 24.0,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional

@@ -16,6 +16,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'templates_model.dart';
 export 'templates_model.dart';
 
@@ -325,7 +326,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                       enableDrag: false,
                                       context: context,
                                       builder: (context) {
-                                        return GestureDetector(
+                                        return WebViewAware(
+                                            child: GestureDetector(
                                           onTap: () => _model
                                                   .unfocusNode.canRequestFocus
                                               ? FocusScope.of(context)
@@ -338,7 +340,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                 context),
                                             child: AddWidget(),
                                           ),
-                                        );
+                                        ));
                                       },
                                     ).then((value) => safeSetState(() {}));
                                   },
@@ -671,7 +673,9 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
+                                                                        return WebViewAware(
+                                                                            child:
+                                                                                GestureDetector(
                                                                           onTap: () => _model.unfocusNode.canRequestFocus
                                                                               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
                                                                               : FocusScope.of(context).unfocus(),
@@ -685,7 +689,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               id: listViewTemplatesRow.id,
                                                                             ),
                                                                           ),
-                                                                        );
+                                                                        ));
                                                                       },
                                                                     ).then((value) =>
                                                                         safeSetState(
@@ -821,7 +825,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               enableDrag: false,
                                                                               context: context,
                                                                               builder: (context) {
-                                                                                return GestureDetector(
+                                                                                return WebViewAware(
+                                                                                    child: GestureDetector(
                                                                                   onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                   child: Padding(
                                                                                     padding: MediaQuery.viewInsetsOf(context),
@@ -836,7 +841,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                       ),
                                                                                     ),
                                                                                   ),
-                                                                                );
+                                                                                ));
                                                                               },
                                                                             ).then((value) =>
                                                                                 safeSetState(() {}));
@@ -888,7 +893,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             var confirmDialogResponse = await showDialog<bool>(
                                                                                   context: context,
                                                                                   builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
+                                                                                    return WebViewAware(
+                                                                                        child: AlertDialog(
                                                                                       title: Text('DELETAR ESSA PAG?'),
                                                                                       content: Text('tem certeza?'),
                                                                                       actions: [
@@ -901,7 +907,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                           child: Text('Confirmar'),
                                                                                         ),
                                                                                       ],
-                                                                                    );
+                                                                                    ));
                                                                                   },
                                                                                 ) ??
                                                                                 false;
@@ -1078,7 +1084,9 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
+                                                                        return WebViewAware(
+                                                                            child:
+                                                                                GestureDetector(
                                                                           onTap: () => _model.unfocusNode.canRequestFocus
                                                                               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
                                                                               : FocusScope.of(context).unfocus(),
@@ -1092,7 +1100,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               id: listViewTemplatesRow.id,
                                                                             ),
                                                                           ),
-                                                                        );
+                                                                        ));
                                                                       },
                                                                     ).then((value) =>
                                                                         safeSetState(
@@ -1228,7 +1236,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               enableDrag: false,
                                                                               context: context,
                                                                               builder: (context) {
-                                                                                return GestureDetector(
+                                                                                return WebViewAware(
+                                                                                    child: GestureDetector(
                                                                                   onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                   child: Padding(
                                                                                     padding: MediaQuery.viewInsetsOf(context),
@@ -1243,7 +1252,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                       ),
                                                                                     ),
                                                                                   ),
-                                                                                );
+                                                                                ));
                                                                               },
                                                                             ).then((value) =>
                                                                                 safeSetState(() {}));
@@ -1295,7 +1304,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             var confirmDialogResponse = await showDialog<bool>(
                                                                                   context: context,
                                                                                   builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
+                                                                                    return WebViewAware(
+                                                                                        child: AlertDialog(
                                                                                       title: Text('DELETAR ESSA PAG?'),
                                                                                       content: Text('tem certeza?'),
                                                                                       actions: [
@@ -1308,7 +1318,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                           child: Text('Confirmar'),
                                                                                         ),
                                                                                       ],
-                                                                                    );
+                                                                                    ));
                                                                                   },
                                                                                 ) ??
                                                                                 false;
@@ -1483,7 +1493,9 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
+                                                                        return WebViewAware(
+                                                                            child:
+                                                                                GestureDetector(
                                                                           onTap: () => _model.unfocusNode.canRequestFocus
                                                                               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
                                                                               : FocusScope.of(context).unfocus(),
@@ -1497,7 +1509,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               id: listViewTemplatesRow.id,
                                                                             ),
                                                                           ),
-                                                                        );
+                                                                        ));
                                                                       },
                                                                     ).then((value) =>
                                                                         safeSetState(
@@ -1633,7 +1645,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               enableDrag: false,
                                                                               context: context,
                                                                               builder: (context) {
-                                                                                return GestureDetector(
+                                                                                return WebViewAware(
+                                                                                    child: GestureDetector(
                                                                                   onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                   child: Padding(
                                                                                     padding: MediaQuery.viewInsetsOf(context),
@@ -1648,7 +1661,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                       ),
                                                                                     ),
                                                                                   ),
-                                                                                );
+                                                                                ));
                                                                               },
                                                                             ).then((value) =>
                                                                                 safeSetState(() {}));
@@ -1700,7 +1713,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             var confirmDialogResponse = await showDialog<bool>(
                                                                                   context: context,
                                                                                   builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
+                                                                                    return WebViewAware(
+                                                                                        child: AlertDialog(
                                                                                       title: Text('DELETAR ESSA PAG?'),
                                                                                       content: Text('tem certeza?'),
                                                                                       actions: [
@@ -1713,7 +1727,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                           child: Text('Confirmar'),
                                                                                         ),
                                                                                       ],
-                                                                                    );
+                                                                                    ));
                                                                                   },
                                                                                 ) ??
                                                                                 false;
@@ -1888,7 +1902,9 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
+                                                                        return WebViewAware(
+                                                                            child:
+                                                                                GestureDetector(
                                                                           onTap: () => _model.unfocusNode.canRequestFocus
                                                                               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
                                                                               : FocusScope.of(context).unfocus(),
@@ -1902,7 +1918,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               id: listViewTemplatesRow.id,
                                                                             ),
                                                                           ),
-                                                                        );
+                                                                        ));
                                                                       },
                                                                     ).then((value) =>
                                                                         safeSetState(
@@ -2038,7 +2054,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               enableDrag: false,
                                                                               context: context,
                                                                               builder: (context) {
-                                                                                return GestureDetector(
+                                                                                return WebViewAware(
+                                                                                    child: GestureDetector(
                                                                                   onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                   child: Padding(
                                                                                     padding: MediaQuery.viewInsetsOf(context),
@@ -2053,7 +2070,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                       ),
                                                                                     ),
                                                                                   ),
-                                                                                );
+                                                                                ));
                                                                               },
                                                                             ).then((value) =>
                                                                                 safeSetState(() {}));
@@ -2105,7 +2122,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             var confirmDialogResponse = await showDialog<bool>(
                                                                                   context: context,
                                                                                   builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
+                                                                                    return WebViewAware(
+                                                                                        child: AlertDialog(
                                                                                       title: Text('DELETAR ESSA PAG?'),
                                                                                       content: Text('tem certeza?'),
                                                                                       actions: [
@@ -2118,7 +2136,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                           child: Text('Confirmar'),
                                                                                         ),
                                                                                       ],
-                                                                                    );
+                                                                                    ));
                                                                                   },
                                                                                 ) ??
                                                                                 false;
@@ -2293,7 +2311,9 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
+                                                                        return WebViewAware(
+                                                                            child:
+                                                                                GestureDetector(
                                                                           onTap: () => _model.unfocusNode.canRequestFocus
                                                                               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
                                                                               : FocusScope.of(context).unfocus(),
@@ -2307,7 +2327,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               id: listViewTemplatesRow.id,
                                                                             ),
                                                                           ),
-                                                                        );
+                                                                        ));
                                                                       },
                                                                     ).then((value) =>
                                                                         safeSetState(
@@ -2443,7 +2463,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               enableDrag: false,
                                                                               context: context,
                                                                               builder: (context) {
-                                                                                return GestureDetector(
+                                                                                return WebViewAware(
+                                                                                    child: GestureDetector(
                                                                                   onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                   child: Padding(
                                                                                     padding: MediaQuery.viewInsetsOf(context),
@@ -2458,7 +2479,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                       ),
                                                                                     ),
                                                                                   ),
-                                                                                );
+                                                                                ));
                                                                               },
                                                                             ).then((value) =>
                                                                                 safeSetState(() {}));
@@ -2510,7 +2531,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             var confirmDialogResponse = await showDialog<bool>(
                                                                                   context: context,
                                                                                   builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
+                                                                                    return WebViewAware(
+                                                                                        child: AlertDialog(
                                                                                       title: Text('DELETAR ESSA PAG?'),
                                                                                       content: Text('tem certeza?'),
                                                                                       actions: [
@@ -2523,7 +2545,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                           child: Text('Confirmar'),
                                                                                         ),
                                                                                       ],
-                                                                                    );
+                                                                                    ));
                                                                                   },
                                                                                 ) ??
                                                                                 false;

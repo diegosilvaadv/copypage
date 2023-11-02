@@ -35,12 +35,16 @@ class _AddWidgetState extends State<AddWidget> {
 
     _model.tituloController ??= TextEditingController();
     _model.tituloFocusNode ??= FocusNode();
+
     _model.descricaoController ??= TextEditingController();
     _model.descricaoFocusNode ??= FocusNode();
+
     _model.categoriaController ??= TextEditingController();
     _model.categoriaFocusNode ??= FocusNode();
+
     _model.codpagController ??= TextEditingController();
     _model.codpagFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

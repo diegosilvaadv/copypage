@@ -155,14 +155,19 @@ class _LoginWidgetState extends State<LoginWidget>
     )..addListener(() => setState(() {}));
     _model.emailAddressController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
+
     _model.passwordController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
+
     _model.nomeController ??= TextEditingController();
     _model.nomeFocusNode ??= FocusNode();
+
     _model.emailAddress2Controller ??= TextEditingController();
     _model.emailAddress2FocusNode ??= FocusNode();
+
     _model.password2Controller ??= TextEditingController();
     _model.password2FocusNode ??= FocusNode();
+
     _model.confpasswordController ??= TextEditingController();
     _model.confpasswordFocusNode ??= FocusNode();
 

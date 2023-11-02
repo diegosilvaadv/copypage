@@ -15,6 +15,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'detalhe_page_model.dart';
 export 'detalhe_page_model.dart';
 
@@ -136,6 +137,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
 
     _model.textController ??= TextEditingController(text: widget.copypage);
     _model.textFieldFocusNode ??= FocusNode();
+
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -884,7 +886,8 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                 enableDrag: false,
                                 context: context,
                                 builder: (context) {
-                                  return GestureDetector(
+                                  return WebViewAware(
+                                      child: GestureDetector(
                                     onTap: () => _model
                                             .unfocusNode.canRequestFocus
                                         ? FocusScope.of(context)
@@ -894,7 +897,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                       padding: MediaQuery.viewInsetsOf(context),
                                       child: CriarcontaWidget(),
                                     ),
-                                  );
+                                  ));
                                 },
                               ).then((value) => safeSetState(() {}));
                             }

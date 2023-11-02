@@ -12,6 +12,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'dash_board_model.dart';
 export 'dash_board_model.dart';
 
@@ -317,7 +318,8 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                       enableDrag: false,
                                       context: context,
                                       builder: (context) {
-                                        return GestureDetector(
+                                        return WebViewAware(
+                                            child: GestureDetector(
                                           onTap: () => _model
                                                   .unfocusNode.canRequestFocus
                                               ? FocusScope.of(context)
@@ -330,7 +332,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                                 context),
                                             child: AddWidget(),
                                           ),
-                                        );
+                                        ));
                                       },
                                     ).then((value) => safeSetState(() {}));
                                   },

@@ -19,6 +19,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'perfil_model.dart';
 export 'perfil_model.dart';
 
@@ -812,7 +813,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                             enableDrag: false,
                             context: context,
                             builder: (context) {
-                              return GestureDetector(
+                              return WebViewAware(
+                                  child: GestureDetector(
                                 onTap: () => _model.unfocusNode.canRequestFocus
                                     ? FocusScope.of(context)
                                         .requestFocus(_model.unfocusNode)
@@ -823,7 +825,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                     nome: columnUsersRow!.nome!,
                                   ),
                                 ),
-                              );
+                              ));
                             },
                           ).then((value) => safeSetState(() {}));
                         },
@@ -874,7 +876,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                   enableDrag: false,
                                   context: context,
                                   builder: (context) {
-                                    return GestureDetector(
+                                    return WebViewAware(
+                                        child: GestureDetector(
                                       onTap: () => _model
                                               .unfocusNode.canRequestFocus
                                           ? FocusScope.of(context)
@@ -885,7 +888,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                             MediaQuery.viewInsetsOf(context),
                                         child: AddWidget(),
                                       ),
-                                    );
+                                    ));
                                   },
                                 ).then((value) => safeSetState(() {}));
                               },
@@ -920,7 +923,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                   enableDrag: false,
                                   context: context,
                                   builder: (context) {
-                                    return GestureDetector(
+                                    return WebViewAware(
+                                        child: GestureDetector(
                                       onTap: () => _model
                                               .unfocusNode.canRequestFocus
                                           ? FocusScope.of(context)
@@ -931,7 +935,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                             MediaQuery.viewInsetsOf(context),
                                         child: EntraremcontatoWidget(),
                                       ),
-                                    );
+                                    ));
                                   },
                                 ).then((value) => safeSetState(() {}));
                               },
@@ -1114,7 +1118,6 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                               )
                                                               .order(
                                                                   'created_at'),
-                                                          limit: 2,
                                                         ),
                                                         builder: (context,
                                                             snapshot) {
@@ -1208,7 +1211,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                   enableDrag: false,
                                                                                   context: context,
                                                                                   builder: (context) {
-                                                                                    return GestureDetector(
+                                                                                    return WebViewAware(
+                                                                                        child: GestureDetector(
                                                                                       onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                       child: Padding(
                                                                                         padding: MediaQuery.viewInsetsOf(context),
@@ -1217,7 +1221,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                           id: listViewTemplatesRow.id,
                                                                                         ),
                                                                                       ),
-                                                                                    );
+                                                                                    ));
                                                                                   },
                                                                                 ).then((value) => safeSetState(() {}));
                                                                               },
@@ -1308,7 +1312,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                           enableDrag: false,
                                                                                           context: context,
                                                                                           builder: (context) {
-                                                                                            return GestureDetector(
+                                                                                            return WebViewAware(
+                                                                                                child: GestureDetector(
                                                                                               onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                               child: Padding(
                                                                                                 padding: MediaQuery.viewInsetsOf(context),
@@ -1323,7 +1328,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
-                                                                                            );
+                                                                                            ));
                                                                                           },
                                                                                         ).then((value) => safeSetState(() {}));
                                                                                       },
@@ -1353,7 +1358,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                         var confirmDialogResponse = await showDialog<bool>(
                                                                                               context: context,
                                                                                               builder: (alertDialogContext) {
-                                                                                                return AlertDialog(
+                                                                                                return WebViewAware(
+                                                                                                    child: AlertDialog(
                                                                                                   title: Text('DELETAR ESSA PAG?'),
                                                                                                   content: Text('tem certeza?'),
                                                                                                   actions: [
@@ -1366,7 +1372,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                                       child: Text('Confirmar'),
                                                                                                     ),
                                                                                                   ],
-                                                                                                );
+                                                                                                ));
                                                                                               },
                                                                                             ) ??
                                                                                             false;
@@ -1536,7 +1542,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                 enableDrag: false,
                                                                                 context: context,
                                                                                 builder: (context) {
-                                                                                  return GestureDetector(
+                                                                                  return WebViewAware(
+                                                                                      child: GestureDetector(
                                                                                     onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                     child: Padding(
                                                                                       padding: MediaQuery.viewInsetsOf(context),
@@ -1545,7 +1552,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                         id: listViewTemplatesRow.id,
                                                                                       ),
                                                                                     ),
-                                                                                  );
+                                                                                  ));
                                                                                 },
                                                                               ).then((value) => safeSetState(() {}));
                                                                             },
@@ -1643,7 +1650,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                         enableDrag: false,
                                                                                         context: context,
                                                                                         builder: (context) {
-                                                                                          return GestureDetector(
+                                                                                          return WebViewAware(
+                                                                                              child: GestureDetector(
                                                                                             onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                             child: Padding(
                                                                                               padding: MediaQuery.viewInsetsOf(context),
@@ -1658,7 +1666,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                                 ),
                                                                                               ),
                                                                                             ),
-                                                                                          );
+                                                                                          ));
                                                                                         },
                                                                                       ).then((value) => safeSetState(() {}));
                                                                                     },
@@ -1688,7 +1696,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                       var confirmDialogResponse = await showDialog<bool>(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
-                                                                                              return AlertDialog(
+                                                                                              return WebViewAware(
+                                                                                                  child: AlertDialog(
                                                                                                 title: Text('DELETAR ESSA PAG?'),
                                                                                                 content: Text('tem certeza?'),
                                                                                                 actions: [
@@ -1701,7 +1710,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                                     child: Text('Confirmar'),
                                                                                                   ),
                                                                                                 ],
-                                                                                              );
+                                                                                              ));
                                                                                             },
                                                                                           ) ??
                                                                                           false;
@@ -1868,7 +1877,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                 enableDrag: false,
                                                                                 context: context,
                                                                                 builder: (context) {
-                                                                                  return GestureDetector(
+                                                                                  return WebViewAware(
+                                                                                      child: GestureDetector(
                                                                                     onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                     child: Padding(
                                                                                       padding: MediaQuery.viewInsetsOf(context),
@@ -1877,7 +1887,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                         id: listViewTemplatesRow.id,
                                                                                       ),
                                                                                     ),
-                                                                                  );
+                                                                                  ));
                                                                                 },
                                                                               ).then((value) => safeSetState(() {}));
                                                                             },
@@ -1975,7 +1985,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                         enableDrag: false,
                                                                                         context: context,
                                                                                         builder: (context) {
-                                                                                          return GestureDetector(
+                                                                                          return WebViewAware(
+                                                                                              child: GestureDetector(
                                                                                             onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                             child: Padding(
                                                                                               padding: MediaQuery.viewInsetsOf(context),
@@ -1990,7 +2001,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                                 ),
                                                                                               ),
                                                                                             ),
-                                                                                          );
+                                                                                          ));
                                                                                         },
                                                                                       ).then((value) => safeSetState(() {}));
                                                                                     },
@@ -2020,7 +2031,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                       var confirmDialogResponse = await showDialog<bool>(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
-                                                                                              return AlertDialog(
+                                                                                              return WebViewAware(
+                                                                                                  child: AlertDialog(
                                                                                                 title: Text('DELETAR ESSA PAG?'),
                                                                                                 content: Text('tem certeza?'),
                                                                                                 actions: [
@@ -2033,7 +2045,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                                     child: Text('Confirmar'),
                                                                                                   ),
                                                                                                 ],
-                                                                                              );
+                                                                                              ));
                                                                                             },
                                                                                           ) ??
                                                                                           false;
@@ -2200,7 +2212,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                 enableDrag: false,
                                                                                 context: context,
                                                                                 builder: (context) {
-                                                                                  return GestureDetector(
+                                                                                  return WebViewAware(
+                                                                                      child: GestureDetector(
                                                                                     onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                     child: Padding(
                                                                                       padding: MediaQuery.viewInsetsOf(context),
@@ -2209,7 +2222,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                         id: listViewTemplatesRow.id,
                                                                                       ),
                                                                                     ),
-                                                                                  );
+                                                                                  ));
                                                                                 },
                                                                               ).then((value) => safeSetState(() {}));
                                                                             },
@@ -2307,7 +2320,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                         enableDrag: false,
                                                                                         context: context,
                                                                                         builder: (context) {
-                                                                                          return GestureDetector(
+                                                                                          return WebViewAware(
+                                                                                              child: GestureDetector(
                                                                                             onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                             child: Padding(
                                                                                               padding: MediaQuery.viewInsetsOf(context),
@@ -2322,7 +2336,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                                 ),
                                                                                               ),
                                                                                             ),
-                                                                                          );
+                                                                                          ));
                                                                                         },
                                                                                       ).then((value) => safeSetState(() {}));
                                                                                     },
@@ -2352,7 +2366,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                       var confirmDialogResponse = await showDialog<bool>(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
-                                                                                              return AlertDialog(
+                                                                                              return WebViewAware(
+                                                                                                  child: AlertDialog(
                                                                                                 title: Text('DELETAR ESSA PAG?'),
                                                                                                 content: Text('tem certeza?'),
                                                                                                 actions: [
@@ -2365,7 +2380,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                                     child: Text('Confirmar'),
                                                                                                   ),
                                                                                                 ],
-                                                                                              );
+                                                                                              ));
                                                                                             },
                                                                                           ) ??
                                                                                           false;
@@ -2532,7 +2547,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                 enableDrag: false,
                                                                                 context: context,
                                                                                 builder: (context) {
-                                                                                  return GestureDetector(
+                                                                                  return WebViewAware(
+                                                                                      child: GestureDetector(
                                                                                     onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                     child: Padding(
                                                                                       padding: MediaQuery.viewInsetsOf(context),
@@ -2541,7 +2557,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                         id: listViewTemplatesRow.id,
                                                                                       ),
                                                                                     ),
-                                                                                  );
+                                                                                  ));
                                                                                 },
                                                                               ).then((value) => safeSetState(() {}));
                                                                             },
@@ -2639,7 +2655,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                         enableDrag: false,
                                                                                         context: context,
                                                                                         builder: (context) {
-                                                                                          return GestureDetector(
+                                                                                          return WebViewAware(
+                                                                                              child: GestureDetector(
                                                                                             onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                             child: Padding(
                                                                                               padding: MediaQuery.viewInsetsOf(context),
@@ -2654,7 +2671,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                                 ),
                                                                                               ),
                                                                                             ),
-                                                                                          );
+                                                                                          ));
                                                                                         },
                                                                                       ).then((value) => safeSetState(() {}));
                                                                                     },
@@ -2684,7 +2701,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                       var confirmDialogResponse = await showDialog<bool>(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
-                                                                                              return AlertDialog(
+                                                                                              return WebViewAware(
+                                                                                                  child: AlertDialog(
                                                                                                 title: Text('DELETAR ESSA PAG?'),
                                                                                                 content: Text('tem certeza?'),
                                                                                                 actions: [
@@ -2697,7 +2715,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                                     child: Text('Confirmar'),
                                                                                                   ),
                                                                                                 ],
-                                                                                              );
+                                                                                              ));
                                                                                             },
                                                                                           ) ??
                                                                                           false;

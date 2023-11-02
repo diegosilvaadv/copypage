@@ -38,6 +38,7 @@ class _EditarnomeWidgetState extends State<EditarnomeWidget> {
 
     _model.tituloController ??= TextEditingController(text: widget.nome);
     _model.tituloFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

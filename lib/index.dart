@@ -8,3 +8,4 @@ export '/dash_board/templates/templates_widget.dart' show TemplatesWidget;
 export '/pages/login/login_widget.dart' show LoginWidget;
 export '/pages/perfil/perfil_widget.dart' show PerfilWidget;
 export '/pages/vermais/vermais_widget.dart' show VermaisWidget;
+export '/pages/vermaisall/vermaisall_widget.dart' show VermaisallWidget;

@@ -824,15 +824,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       children: [
                                         FFButtonWidget(
                                           onPressed: () async {
-                                            context.pushNamed(
-                                              'vermais',
-                                              queryParameters: {
-                                                'tag': serializeParam(
-                                                  '',
-                                                  ParamType.String,
-                                                ),
-                                              }.withoutNulls,
-                                            );
+                                            context.pushNamed('vermaisall');
                                           },
                                           text: 'VER MAIS',
                                           options: FFButtonOptions(

@@ -144,6 +144,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => VermaisWidget(
             tag: params.getParam('tag', ParamType.String),
           ),
+        ),
+        FFRoute(
+          name: 'vermaisall',
+          path: '/vermaisall',
+          builder: (context, params) => VermaisallWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

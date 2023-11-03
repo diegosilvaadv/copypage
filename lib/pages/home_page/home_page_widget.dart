@@ -1732,8 +1732,16 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
+                                        onPressed: () async {
+                                          context.pushNamed(
+                                            'vermais',
+                                            queryParameters: {
+                                              'tag': serializeParam(
+                                                'authentication',
+                                                ParamType.String,
+                                              ),
+                                            }.withoutNulls,
+                                          );
                                         },
                                         text: 'VER MAIS',
                                         options: FFButtonOptions(

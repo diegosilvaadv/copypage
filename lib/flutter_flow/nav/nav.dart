@@ -141,7 +141,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'vermais',
           path: '/vermais',
-          builder: (context, params) => VermaisWidget(),
+          builder: (context, params) => VermaisWidget(
+            tag: params.getParam('tag', ParamType.String),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

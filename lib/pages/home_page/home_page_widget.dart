@@ -824,7 +824,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       children: [
                                         FFButtonWidget(
                                           onPressed: () async {
-                                            context.pushNamed('vermais');
+                                            context.pushNamed(
+                                              'vermais',
+                                              queryParameters: {
+                                                'tag': serializeParam(
+                                                  '',
+                                                  ParamType.String,
+                                                ),
+                                              }.withoutNulls,
+                                            );
                                           },
                                           text: 'VER MAIS',
                                           options: FFButtonOptions(
@@ -1270,8 +1278,16 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
+                                        onPressed: () async {
+                                          context.pushNamed(
+                                            'vermais',
+                                            queryParameters: {
+                                              'tag': serializeParam(
+                                                'componentes',
+                                                ParamType.String,
+                                              ),
+                                            }.withoutNulls,
+                                          );
                                         },
                                         text: 'VER MAIS',
                                         options: FFButtonOptions(

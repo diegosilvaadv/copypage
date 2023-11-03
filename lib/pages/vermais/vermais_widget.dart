@@ -15,7 +15,12 @@ import 'vermais_model.dart';
 export 'vermais_model.dart';
 
 class VermaisWidget extends StatefulWidget {
-  const VermaisWidget({Key? key}) : super(key: key);
+  const VermaisWidget({
+    Key? key,
+    required this.tag,
+  }) : super(key: key);
+
+  final String? tag;
 
   @override
   _VermaisWidgetState createState() => _VermaisWidgetState();
@@ -592,7 +597,10 @@ class _VermaisWidgetState extends State<VermaisWidget>
                             alignment: AlignmentDirectional(0.00, 0.00),
                             child: FutureBuilder<List<TemplatesRow>>(
                               future: TemplatesTable().queryRows(
-                                queryFn: (q) => q,
+                                queryFn: (q) => q.eq(
+                                  'categoria',
+                                  widget.tag,
+                                ),
                               ),
                               builder: (context, snapshot) {
                                 // Customize what your widget looks like when it's loading.

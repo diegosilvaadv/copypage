@@ -7,3 +7,4 @@ export '/dash_board/dash_board/dash_board_widget.dart' show DashBoardWidget;
 export '/dash_board/templates/templates_widget.dart' show TemplatesWidget;
 export '/pages/login/login_widget.dart' show LoginWidget;
 export '/pages/perfil/perfil_widget.dart' show PerfilWidget;
+export '/pages/vermais/vermais_widget.dart' show VermaisWidget;

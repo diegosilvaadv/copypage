@@ -823,8 +823,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
+                                          onPressed: () async {
+                                            context.pushNamed('vermais');
                                           },
                                           text: 'VER MAIS',
                                           options: FFButtonOptions(

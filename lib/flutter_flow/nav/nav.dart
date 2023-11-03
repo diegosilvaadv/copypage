@@ -137,6 +137,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'perfil',
           path: '/perfil',
           builder: (context, params) => PerfilWidget(),
+        ),
+        FFRoute(
+          name: 'vermais',
+          path: '/vermais',
+          builder: (context, params) => VermaisWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
